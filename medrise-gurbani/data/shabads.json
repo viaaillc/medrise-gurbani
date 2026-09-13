@@ -1,0 +1,696 @@
+{
+ "site": {
+  "name": "MedRise Gurbani",
+  "tagline": "Meditate and Rise with Gurbani",
+  "url": "https://viaaillc.github.io/medrise-gurbani",
+  "description": "MedRise Gurbani releases Shabad Kirtan with Gurmukhi, transliteration and English translation — a prayer for every moment: protection, debt relief, peace, study and success. Listen on Spotify, Apple Music, YouTube, Amazon Music and more.",
+  "artist_links": {
+   "Spotify": "https://open.spotify.com/artist/0J71hMTTyoPkpzUqB35CkF",
+   "Apple Music": "https://music.apple.com/us/artist/medrise-gurbani/6806813151",
+   "YouTube": "https://www.youtube.com/@MedRiseGurbani",
+   "YouTube Music": "https://music.youtube.com/channel/UCozEBqE-82khwLAmz_8TvYg",
+   "Amazon Music": "https://music.amazon.com/artists/B0HH85J38T/medrise-gurbani",
+   "Deezer": "https://www.deezer.com/us/artist/413317021"
+  },
+  "alternate_names": [
+   "MedRise Gurbani",
+   "Medrise Gurbani",
+   "Med Rise Gurbani",
+   "MedRise Gurbani kirtan"
+  ]
+ },
+ "shabads": [
+  {
+   "slug": "so-satgur-pyara-mere-naal-hai",
+   "title": "So Satgur Pyara Mere Naal Hai",
+   "subtitle": "Jithe Kithe Mainu Le Chadaye",
+   "gurmukhi_title": "ਸੋ ਸਤਿਗੁਰੁ ਪਿਆਰਾ ਮੇਰੈ ਨਾਲਿ ਹੈ",
+   "theme": "A prayer for protection, guidance and new beginnings",
+   "intention": "Sing this when you are stepping into the unknown — a new city, a new role, a new chapter — and want to feel that the Guru walks beside you.",
+   "source": {
+    "granth": "Sri Guru Granth Sahib Ji",
+    "ang": 588,
+    "raag": "Raag Vadhans (Vadhans Ki Vaar, Pauri 5)",
+    "writer": "Guru Amar Das Ji (Mahalla 3)"
+   },
+   "release_date": "2026-09-01",
+   "duration": "PT4M39S",
+   "image_remote": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/77/ab/f977ab87-53f0-def2-70b4-c2b70c2a819f/artwork.jpg/1400x1400bb.jpg",
+   "links": {
+    "Spotify": "https://open.spotify.com/track/2nFyF9RUlW2BalpGUno0AX",
+    "Apple Music": "https://music.apple.com/us/album/so-satgur-pyara-mere-naal-hai-jithe-kithe-mainu-le-chadaye/6807509612?i=6807509613",
+    "YouTube": "https://www.youtube.com/watch?v=TYhqoTVEf7Q",
+    "YouTube Music": "https://music.youtube.com/watch?v=w41EK1_02g4",
+    "Amazon Music": "https://music.amazon.com/albums/B0HHG4DX8M",
+    "Deezer": "https://www.deezer.com/us/album/1068241081",
+    "TIDAL": "https://listen.tidal.com/track/557463621",
+    "All platforms": "https://song.link/i/6807509613"
+   },
+   "youtube_id": "TYhqoTVEf7Q",
+   "verses": [
+    {
+     "g": "ਤਿਸੁ ਗੁਰ ਕਉ ਹਉ ਵਾਰਿਆ ਜਿਨਿ ਹਰਿ ਕੀ ਹਰਿ ਕਥਾ ਸੁਣਾਈ ॥",
+     "t": "Tis gur kau hau vaariaa jin har kee har kathaa sunaaee.",
+     "e": "I am a sacrifice to the Guru, who recites the sermon of the Lord's teachings."
+    },
+    {
+     "g": "ਤਿਸੁ ਗੁਰ ਕਉ ਸਦ ਬਲਿਹਾਰਣੈ ਜਿਨਿ ਹਰਿ ਸੇਵਾ ਬਣਤ ਬਣਾਈ ॥",
+     "t": "Tis gur kau sad balihaaranai jin har sevaa banat banaaee.",
+     "e": "I am forever a sacrifice to that Guru, who has led me to serve the Lord."
+    },
+    {
+     "g": "ਸੋ ਸਤਿਗੁਰੁ ਪਿਆਰਾ ਮੇਰੈ ਨਾਲਿ ਹੈ ਜਿਥੈ ਕਿਥੈ ਮੈਨੋ ਲਏ ਛਡਾਈ ॥",
+     "t": "So satigur piaaraa merai naal hai jithai kithai maino le chhadaaee.",
+     "e": "That beloved True Guru is always with me; wherever I may be, He will save me.",
+     "key": true
+    },
+    {
+     "g": "ਤਿਸੁ ਗੁਰ ਕਉ ਸਾਬਾਸਿ ਹੈ ਜਿਨਿ ਹਰਿ ਸੋਝੀ ਪਾਈ ॥",
+     "t": "Tis gur kau saabaas hai jin har sojhee paaee.",
+     "e": "Most blessed is that Guru, who imparts understanding of the Lord."
+    },
+    {
+     "g": "ਨਾਨਕੁ ਗੁਰ ਵਿਟਹੁ ਵਾਰਿਆ ਜਿਨਿ ਹਰਿ ਨਾਮੁ ਦੀਆ ਮੇਰੇ ਮਨ ਕੀ ਆਸ ਪੁਰਾਈ ॥੫॥",
+     "t": "Naanak gur vitahu vaariaa jin har naam deeaa mere man kee aas puraaee. ||5||",
+     "e": "O Nanak, I am a sacrifice to the Guru, who has given me the Lord's Name and fulfilled the desires of my mind. ||5||"
+    }
+   ],
+   "keywords": [
+    "So Satgur Pyara Mere Naal Hai",
+    "So Satgur Pyara",
+    "Satgur Pyara Mere Naal Hai",
+    "Satguru Pyara Mere Naal Hai",
+    "So Satgur Piara Mere Naal Hai",
+    "So Satigur Piaara Merai Naal Hai",
+    "Jithe Kithe Mainu Le Chadaye",
+    "Jithai Kithai Maino Le Chhadaaee",
+    "Jithe Kithe Mainu Lai Chhadai",
+    "ਸੋ ਸਤਿਗੁਰੁ ਪਿਆਰਾ ਮੇਰੈ ਨਾਲਿ ਹੈ",
+    "ਜਿਥੈ ਕਿਥੈ ਮੈਨੋ ਲਏ ਛਡਾਈ",
+    "Tis Gur Kau Hau Vaariaa",
+    "Vadhans Ki Vaar Pauri 5",
+    "Ang 588 shabad",
+    "Guru Amar Das Ji shabad",
+    "shabad for protection",
+    "shabad for new beginnings",
+    "shabad for moving to a new city",
+    "shabad for guidance",
+    "Gurbani for anxiety and fear",
+    "Satguru mere naal hai",
+    "MedRise Gurbani",
+    "shabad kirtan",
+    "Gurbani kirtan with English translation",
+    "Gurmukhi lyrics with meaning"
+   ],
+   "image_slug": "so-satgur-pyara"
+  },
+  {
+   "slug": "karaj-utarya-satguru-kar-aahar-aap",
+   "title": "Karaj Utarya Satguru Kar Aahar Aap",
+   "subtitle": "The True Guru has paid off my debt",
+   "gurmukhi_title": "ਕਰਜੁ ਉਤਾਰਿਆ ਸਤਿਗੁਰੂ ਕਰਿ ਆਹਰੁ ਆਪ",
+   "theme": "A prayer for debt relief, financial stress and abundance",
+   "intention": "For the weight of money worries — loans, bills, a shortfall that keeps you up at night. The Guru's Word is described here as a treasury that is never exhausted.",
+   "source": {
+    "granth": "Sri Guru Granth Sahib Ji",
+    "ang": 816,
+    "raag": "Raag Bilaval",
+    "writer": "Guru Arjan Dev Ji (Mahalla 5)"
+   },
+   "release_date": "2026-09-07",
+   "duration": "PT5M58S",
+   "image_remote": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/14/3b/14/143b144c-bfb6-4541-e876-1bb7c7e8feb5/artwork.jpg/1400x1400bb.jpg",
+   "links": {
+    "Spotify": "https://open.spotify.com/track/5og4pmGvwC9jzS72En4PmI",
+    "Apple Music": "https://music.apple.com/us/album/karaj-utarya-satguru-kar-aahar-aap-powerful-gurbani/6809545681?i=6809545682",
+    "YouTube": "https://www.youtube.com/watch?v=fjXdn5K-PJE",
+    "Amazon Music": "https://music.amazon.com/albums/B0HJ3Y27KW",
+    "Deezer": "https://www.deezer.com/us/album/1073090612",
+    "All platforms": "https://song.link/i/6809545682"
+   },
+   "youtube_id": "fjXdn5K-PJE",
+   "verses": [
+    {
+     "g": "ਜੀਅ ਜੰਤ ਸੁਪ੍ਰਸੰਨ ਭਏ ਦੇਖਿ ਪ੍ਰਭ ਪਰਤਾਪ ॥",
+     "t": "Jeea jant suprasann bhae dekh prabh partaap.",
+     "e": "All beings and creatures are totally pleased, gazing on God's glorious radiance."
+    },
+    {
+     "g": "ਕਰਜੁ ਉਤਾਰਿਆ ਸਤਿਗੁਰੂ ਕਰਿ ਆਹਰੁ ਆਪ ॥੧॥",
+     "t": "Karaj utaariaa satiguroo kar aahar aap. ||1||",
+     "e": "The True Guru has paid off my debt; He Himself did it. ||1||",
+     "key": true
+    },
+    {
+     "g": "ਖਾਤ ਖਰਚਤ ਨਿਬਹਤ ਰਹੈ ਗੁਰ ਸਬਦੁ ਅਖੂਟ ॥",
+     "t": "Khaat kharchat nibahat rahai gur sabad akhoot.",
+     "e": "Eating and spending it, it is always available; the Word of the Guru's Shabad is inexhaustible."
+    },
+    {
+     "g": "ਪੂਰਨ ਭਈ ਸਮਗਰੀ ਕਬਹੂ ਨਹੀ ਤੂਟ ॥੧॥ ਰਹਾਉ ॥",
+     "t": "Pooran bhaee samagree kabahoo nahee toot. ||1|| Rahaau ||",
+     "e": "Everything is perfectly arranged; it is never exhausted. ||1|| Pause ||",
+     "rahao": true
+    },
+    {
+     "g": "ਸਾਧਸੰਗਿ ਆਰਾਧਨਾ ਹਰਿ ਨਿਧਿ ਆਪਾਰ ॥",
+     "t": "Saadhsang aaraadhanaa har nidh aapaar.",
+     "e": "In the Saadh Sangat, the company of the holy, I worship and adore the Lord, the infinite treasure."
+    },
+    {
+     "g": "ਧਰਮ ਅਰਥ ਅਰੁ ਕਾਮ ਮੋਖ ਦੇਤੇ ਨਹੀ ਬਾਰ ॥੨॥",
+     "t": "Dharam arath ar kaam mokh dete nahee baar. ||2||",
+     "e": "He does not hesitate to bless me with righteousness, wealth, fulfilment of desires and liberation. ||2||"
+    },
+    {
+     "g": "ਭਗਤ ਅਰਾਧਹਿ ਏਕ ਰੰਗਿ ਗੋਬਿੰਦ ਗੁਪਾਲ ॥",
+     "t": "Bhagat araadheh ek rang gobind gupaal.",
+     "e": "The devotees worship and adore the Lord of the Universe with single-minded love."
+    },
+    {
+     "g": "ਰਾਮ ਨਾਮ ਧਨੁ ਸੰਚਿਆ ਜਾ ਕਾ ਨਹੀ ਸੁਮਾਰੁ ॥੩॥",
+     "t": "Raam naam dhan sanchiaa jaa kaa nahee sumaar. ||3||",
+     "e": "They gather in the wealth of the Lord's Name, which cannot be estimated. ||3||"
+    },
+    {
+     "g": "ਸਰਨਿ ਪਰੇ ਪ੍ਰਭ ਤੇਰੀਆ ਪ੍ਰਭ ਕੀ ਵਡਿਆਈ ॥",
+     "t": "Saran pare prabh tereeaa prabh kee vadiaaee.",
+     "e": "O God, I seek Your sanctuary — the glorious greatness of God."
+    },
+    {
+     "g": "ਨਾਨਕ ਅੰਤੁ ਨ ਪਾਈਐ ਬੇਅੰਤ ਗੁਸਾਈ ॥੪॥੩੨॥੬੨॥",
+     "t": "Naanak ant na paaeeai beant gusaaee. ||4||32||62||",
+     "e": "O Nanak, Your end or limit cannot be found, O Infinite Lord of the World. ||4||32||62||"
+    }
+   ],
+   "keywords": [
+    "Karaj Utarya Satguru Kar Aahar Aap",
+    "Karaj Utarya Satguru",
+    "Karaj Utaria Satguru",
+    "Karj Utarea Satguru",
+    "Karaj Utareya Satguru",
+    "Karj Utaria Satgur",
+    "Karaj Utaariaa Satiguroo Kar Aahar Aap",
+    "Kar Aahar Aap",
+    "Kar Ahar Aap",
+    "ਕਰਜੁ ਉਤਾਰਿਆ ਸਤਿਗੁਰੂ ਕਰਿ ਆਹਰੁ ਆਪ",
+    "ਕਰਜੁ ਉਤਾਰਿਆ",
+    "Khaat Kharchat Nibahat Rahai",
+    "Gur Shabad Akhoot",
+    "Pooran Bhai Samagri",
+    "Ang 816 shabad",
+    "Raag Bilaval shabad",
+    "Guru Arjan Dev Ji shabad",
+    "shabad for debt relief",
+    "shabad for karza",
+    "Gurbani for financial problems",
+    "Gurbani for money stress",
+    "shabad for prosperity and abundance",
+    "prayer to clear loans",
+    "Sikh prayer for financial peace",
+    "MedRise Gurbani",
+    "shabad kirtan",
+    "Gurbani kirtan with English translation",
+    "Gurmukhi lyrics with meaning"
+   ],
+   "image_slug": "karaj-utarya"
+  },
+  {
+   "slug": "inhi-ki-kirpa-ke-saje-hum-hain",
+   "title": "Inhi Ki Kirpa Ke Saje Hum Hain",
+   "subtitle": "Inhi Ki Kirpa — A Blessing Beyond Words · Khalsa Mahima, Sri Dasam Granth",
+   "gurmukhi_title": "ਇਨਹੀ ਕੀ ਕ੍ਰਿਪਾ ਕੇ ਸਜੇ ਹਮ ਹੈ",
+   "theme": "A prayer for studying, gratitude and success",
+   "intention": "Guru Gobind Singh Ji's own words of gratitude to the Khalsa — everything I have, every victory and every lesson, came through their grace. Sing it before an exam, a test, or any effort you cannot carry alone.",
+   "source": {
+    "granth": "Sri Dasam Granth Sahib",
+    "ang": 716,
+    "raag": "Savaiya — Khalsa Mahima",
+    "writer": "Guru Gobind Singh Ji (Patshahi 10)"
+   },
+   "release_date": "2026-08-30",
+   "duration": "PT3M42S",
+   "image_remote": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/17/e1/18/17e118db-6337-2485-2971-9b745dd790a5/artwork.jpg/1400x1400bb.jpg",
+   "links": {
+    "Spotify": "https://open.spotify.com/track/598mJBX3oggNMLkdDR5O7C",
+    "Apple Music": "https://music.apple.com/us/album/inhi-ki-kirpa/6806883744?i=6806883745",
+    "YouTube": "https://www.youtube.com/watch?v=kFHRyW1GJYo",
+    "YouTube Music": "https://music.youtube.com/watch?v=-1z-pvMOCu4",
+    "Amazon Music": "https://music.amazon.com/albums/B0HH8C4VMK",
+    "Deezer": "https://www.deezer.com/us/album/1066782631",
+    "TIDAL": "https://listen.tidal.com/track/556970612",
+    "All platforms": "https://song.link/i/6806883745"
+   },
+   "youtube_id": "kFHRyW1GJYo",
+   "variant": {
+    "title": "Por Su Gracia — Inhi Ki Kirpa (Gurbani en Español)",
+    "note": "The same shabad with Spanish narration, so the meaning reaches Spanish-speaking listeners.",
+    "image_remote": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e8/3c/75/e83c75fb-246b-1731-e4ad-ba79ec992cac/artwork.jpg/1400x1400bb.jpg",
+    "image_slug": "por-su-gracia",
+    "release_date": "2026-09-08",
+    "links": {
+     "Spotify": "https://open.spotify.com/track/5CK78apg5MIbEP2Kl28Lar",
+     "Apple Music": "https://music.apple.com/us/album/por-su-gracia-inhi-ki-kirpa-gurbani-en-espa%C3%B1ol-medrise/6810047536?i=6810047537",
+     "YouTube Music": "https://music.youtube.com/watch?v=4KtM_yRSCJI",
+     "Amazon Music": "https://music.amazon.com/albums/B0HJ86XCDN",
+     "Deezer": "https://www.deezer.com/us/album/1074302122",
+     "TIDAL": "https://listen.tidal.com/track/559584733",
+     "All platforms": "https://song.link/i/6810047537"
+    },
+    "slug": "por-su-gracia-inhi-ki-kirpa-gurbani-en-espanol",
+    "lang": "es",
+    "theme": "Un shabad para estudiar, la gratitud y el éxito",
+    "intention": "Las palabras de gratitud de Guru Gobind Singh Ji hacia la Khalsa: todo lo que tengo, cada victoria y cada lección, llegó por su gracia. Cántalo antes de un examen, una prueba o cualquier esfuerzo que no puedas llevar solo.",
+    "meaning": [
+     "“Inhi Ki Kirpa Ke Saje Hum Hain” significa “Es por su gracia que estoy adornado como soy”. La palabra inhi significa “de estos” y en todo el shabad señala a los sikhs, la Khalsa. Cada verso atribuye una victoria, un regalo, una lección aprendida o un enemigo vencido no al Guru mismo, sino a la gracia de sus sikhs.",
+     "El shabad es un savaiya de Khalsa Mahima (“En alabanza de la Khalsa”) en Sri Dasam Granth Sahib, página 716, escrito por Guru Gobind Singh Ji. Cantado hoy, es una lección de humildad y gratitud: todo lo que logramos lo sostienen las personas que están a nuestro lado.",
+     "“Por Su Gracia” es la misma grabación de MedRise Gurbani con narración en español, para que el significado llegue a quienes no leen panyabí ni inglés."
+    ],
+    "faq": [
+     [
+      "¿Qué significa “Inhi Ki Kirpa Ke Saje Hum Hain”?",
+      "Significa “Es por su gracia que estoy adornado como soy”: Guru Gobind Singh Ji dice que todo lo que es y tiene le llega por la gracia de sus sikhs, la Khalsa."
+     ],
+     [
+      "¿Quién escribió Inhi Ki Kirpa y dónde se encuentra?",
+      "Fue compuesto por Guru Gobind Singh Ji, el décimo Guru sikh. Es un savaiya de Khalsa Mahima en Sri Dasam Granth Sahib, página 716."
+     ],
+     [
+      "¿Qué es el Gurbani?",
+      "Gurbani es la palabra de los Gurus sikhs, recogida en Sri Guru Granth Sahib y Sri Dasam Granth. Se canta como kirtan y se recita como oración y meditación."
+     ],
+     [
+      "¿Cuándo se canta este shabad?",
+      "En Vaisakhi, en el Amrit Sanchar y siempre que se expresa gratitud a la comunidad. MedRise Gurbani lo ofrece como un shabad para estudiantes y para cualquier esfuerzo que no puedas llevar solo."
+     ]
+    ],
+    "keywords": [
+     "Por Su Gracia",
+     "Gurbani en Español",
+     "Gurbani en español con traducción",
+     "shabad en español",
+     "kirtan sikh en español",
+     "Inhi Ki Kirpa en español",
+     "Inhi Ki Kirpa Ke Saje Hum Hain significado",
+     "Guru Gobind Singh Ji shabad español",
+     "oración sikh para estudiantes",
+     "Dasam Granth en español",
+     "MedRise Gurbani",
+     "Meditate and Rise with Gurbani"
+    ]
+   },
+   "verses": [
+    {
+     "g": "ਜੁੱਧ ਜਿਤੇ ਇਨਹੀ ਕੇ ਪ੍ਰਸਾਦਿ ਇਨਹੀ ਕੇ ਪ੍ਰਸਾਦਿ ਸੁ ਦਾਨ ਕਰੇ ॥",
+     "t": "Judh jite inhee ke prasaad, inhee ke prasaad su daan kare.",
+     "e": "By their grace I have won my battles; by their grace I have been able to give in charity.",
+     "h": "जुद्ध जिते इनही के प्रसादि इनही के प्रसादि सु दान करे ॥",
+     "s": "Por su gracia he ganado mis batallas; por su gracia he podido dar en caridad."
+    },
+    {
+     "g": "ਅਘ ਅਉਘ ਟਰੈ ਇਨਹੀ ਕੇ ਪ੍ਰਸਾਦਿ ਇਨਹੀ ਕੀ ਕ੍ਰਿਪਾ ਫੁਨ ਧਾਮ ਭਰੇ ॥",
+     "t": "Agh augh tarai inhee ke prasaad, inhee kee kirpaa fun dhaam bhare.",
+     "e": "By their grace my heaps of sins have been washed away; by their kindness my home is filled with plenty.",
+     "h": "अघ अउघ टरै इनही के प्रसादि इनही की क्रिपा फुन धाम भरे ॥",
+     "s": "Por su gracia mis montones de pecados han sido lavados; por su bondad mi hogar está lleno de abundancia."
+    },
+    {
+     "g": "ਇਨਹੀ ਕੇ ਪ੍ਰਸਾਦਿ ਸੁ ਬਿਦਿਆ ਲਈ ਇਨਹੀ ਕੀ ਕ੍ਰਿਪਾ ਸਭ ਸਤ੍ਰ ਮਰੇ ॥",
+     "t": "Inhee ke prasaad su bidiaa laee, inhee kee kirpaa sabh satr mare.",
+     "e": "By their grace I have gained knowledge; by their kindness all my enemies have been overcome.",
+     "h": "इनही के प्रसादि सु बिदिआ लई इनही की क्रिपा सभ सत्र मरे ॥",
+     "s": "Por su gracia he adquirido conocimiento; por su bondad todos mis enemigos han sido vencidos."
+    },
+    {
+     "g": "ਇਨਹੀ ਕੀ ਕ੍ਰਿਪਾ ਕੇ ਸਜੇ ਹਮ ਹੈ ਨਹੀ ਮੋ ਸੇ ਗਰੀਬ ਕਰੋਰ ਪਰੇ ॥੨॥",
+     "t": "Inhee kee kirpaa ke saje ham hai, nahee mo se gareeb karor pare. ||2||",
+     "e": "It is by their grace that I am adorned as I am; otherwise there are millions of humble people like me. ||2||",
+     "key": true,
+     "h": "इनही की क्रिपा के सजे हम है नही मो से गरीब करोर परे ॥२॥",
+     "s": "Es por su gracia que estoy adornado como soy; de otro modo, hay millones de personas humildes como yo. ||2||"
+    },
+    {
+     "g": "ਸੇਵ ਕਰੀ ਇਨਹੀ ਕੀ ਭਾਵਤ ਅਉਰ ਕੀ ਸੇਵ ਸੁਹਾਤ ਨ ਜੀਕੋ ॥",
+     "t": "Sev karee inhee kee bhaavat, aur kee sev suhaat na jeeko.",
+     "e": "I love to serve them; serving anyone else does not please my heart.",
+     "h": "सेव करी इनही की भावत अउर की सेव सुहात न जीको ॥",
+     "s": "Amo servirles a ellos; servir a cualquier otro no complace mi corazón."
+    },
+    {
+     "g": "ਦਾਨ ਦਯੋ ਇਨਹੀ ਕੋ ਭਲੋ ਅਰੁ ਆਨ ਕੋ ਦਾਨ ਨ ਲਾਗਤ ਨੀਕੋ ॥",
+     "t": "Daan dayo inhee ko bhalo, ar aan ko daan na laagat neeko.",
+     "e": "A gift given to them is well given; a gift given elsewhere does not seem right.",
+     "h": "दान दयो इनही को भलो अरु आन को दान न लागत नीको ॥",
+     "s": "Un regalo dado a ellos está bien dado; un regalo dado en otro lugar no parece correcto."
+    },
+    {
+     "g": "ਆਗੈ ਫਲੈ ਇਨਹੀ ਕੋ ਦਯੋ ਜਗ ਮੈ ਜਸੁ ਅਉਰ ਦਯੋ ਸਭ ਫੀਕੋ ॥",
+     "t": "Aagai falai inhee ko dayo, jag mai jas aur dayo sabh feeko.",
+     "e": "What is given to them bears fruit hereafter and brings honour in this world; all other giving is pale beside it.",
+     "h": "आगै फलै इनही को दयो जग मै जसु अउर दयो सभ फीको ॥",
+     "s": "Lo que se les da a ellos da fruto en el más allá y trae honor en este mundo; toda otra ofrenda palidece a su lado."
+    },
+    {
+     "g": "ਮੋ ਗ੍ਰਿਹ ਮੈ ਤਨ ਤੇ ਮਨ ਤੇ ਸਿਰ ਲਉ ਧਨ ਹੈ ਸਬ ਹੀ ਇਨਹੀ ਕੋ ॥੩॥",
+     "t": "Mo grih mai tan te man te sir lau dhan hai sab hee inhee ko. ||3||",
+     "e": "My home, my body, my mind, my wealth — even my head — all of it belongs to them. ||3||",
+     "h": "मो ग्रिह मै तन ते मन ते सिर लउ धन है सब ही इनही को ॥३॥",
+     "s": "Mi hogar, mi cuerpo, mi mente, mi riqueza — incluso mi cabeza — todo les pertenece a ellos. ||3||"
+    }
+   ],
+   "keywords": [
+    "Inhi Ki Kirpa",
+    "Inhi Ki Kirpa Ke Saje Hum Hain",
+    "Inhi Ki Kirpa meaning",
+    "Inhi Ki Kirpa Ke Saje Hum Hain meaning",
+    "Inhi Ki Kirpa lyrics",
+    "Inhi Ki Kirpa lyrics in Hindi",
+    "Inhi Ki Kirpa lyrics in English",
+    "Inhi Ki Kirpa Ke Saje Hum Hain lyrics",
+    "Inhi Ki Kirpa Ke Saje Hum Hai",
+    "Inhi Ki Kirpa Ke Sajey Hum Hain",
+    "Inhee Kee Kirpaa Ke Saje Ham Hai",
+    "Inhi Ki Kripa Ke Saje Hum Hain",
+    "Inhi Ki Kirpa Se Saje Hum Hain",
+    "Judh Jite Inhi Ke Prasad",
+    "Judh Jitey Inhi Ke Parsad",
+    "Inhi Ke Prasad Su Bidiya Layee",
+    "ਇਨਹੀ ਕੀ ਕ੍ਰਿਪਾ ਕੇ ਸਜੇ ਹਮ ਹੈ",
+    "ਜੁੱਧ ਜਿਤੇ ਇਨਹੀ ਕੇ ਪ੍ਰਸਾਦਿ",
+    "इनही की कृपा के सजे हम हैं",
+    "इनही की कृपा के सजे हम हैं lyrics",
+    "Khalsa Mahima",
+    "Khalsa Mehma savaiya",
+    "Dasam Granth savaiya",
+    "Dasam Granth page 716",
+    "Guru Gobind Singh Ji shabad",
+    "Vaisakhi shabad",
+    "shabad for students",
+    "shabad for exams and studying",
+    "Gurbani for success",
+    "Gurbani for gratitude",
+    "Por Su Gracia",
+    "Gurbani en Español",
+    "shabad en español",
+    "A Blessing Beyond Words",
+    "MedRise Gurbani",
+    "shabad kirtan",
+    "Gurbani kirtan with English translation",
+    "Gurmukhi lyrics with meaning"
+   ],
+   "image_slug": "inhi-ki-kirpa",
+   "short_title": "Inhi Ki Kirpa",
+   "hindi_title": "इनही की कृपा के सजे हम हैं",
+   "meaning": [
+    "“Inhi Ki Kirpa Ke Saje Hum Hain” (ਇਨਹੀ ਕੀ ਕ੍ਰਿਪਾ ਕੇ ਸਜੇ ਹਮ ਹੈ) translates as “It is by their grace that I am adorned as I am.” The word inhi means “these” or “of these people”, and throughout the shabad it points to the Sikhs — the Khalsa. Every line of the composition gives the credit for a victory, a gift, a lesson learned or an enemy overcome not to the Guru himself but to the grace of his Sikhs.",
+    "The shabad is a savaiya from Khalsa Mahima (“In Praise of the Khalsa”) in Sri Dasam Granth Sahib, page 716, written by Guru Gobind Singh Ji. Sikh tradition places its utterance at Anandpur Sahib, when the Guru was asked why he honoured his Sikhs above the learned Brahmins; his answer was this hymn — that the battles won, the charity given and the knowledge gained all came through the Sikhs, and that without their grace he would be one among millions of ordinary people.",
+    "Sung today, it is a lesson in humility and gratitude: whatever we achieve is held up by the people who stand with us. That is why MedRise Gurbani released it as a shabad for students, exams and any effort you cannot carry alone — and why the same recording is offered with Spanish narration as “Por Su Gracia”, so the meaning reaches listeners who do not read Punjabi or English."
+   ],
+   "faq": [
+    [
+     "What does “Inhi Ki Kirpa Ke Saje Hum Hain” mean?",
+     "It means “It is by their grace that I am adorned as I am” — Guru Gobind Singh Ji saying that everything he is and has comes through the grace of his Sikhs, the Khalsa. The full line continues: “otherwise there are millions of humble people like me.”"
+    ],
+    [
+     "Who wrote Inhi Ki Kirpa and where is it found?",
+     "It was composed by Guru Gobind Singh Ji, the tenth Sikh Guru. It is a savaiya from Khalsa Mahima in Sri Dasam Granth Sahib, page (Ang) 716."
+    ],
+    [
+     "Who is “inhi” — who is the Guru praising?",
+     "Inhi means “these” and refers to the Sikhs — the Khalsa. The shabad credits them, not the Guru, for his victories, charity, knowledge and honour."
+    ],
+    [
+     "When is Inhi Ki Kirpa sung?",
+     "It is sung at Vaisakhi and Khalsa Sajna Diwas, at Amrit Sanchar, and whenever gratitude to the sangat is being expressed. MedRise Gurbani offers it as a shabad for students and for any effort you cannot carry alone — before an exam, an interview or a new beginning."
+    ],
+    [
+     "Are the lyrics available in Hindi and in English?",
+     "Yes. This page gives every line in Gurmukhi, in Devanagari (Hindi script), in Roman transliteration you can sing from, and in English meaning."
+    ],
+    [
+     "Is there a Spanish version of Inhi Ki Kirpa?",
+     "Yes — “Por Su Gracia | Gurbani en Español” by MedRise Gurbani is the same shabad with Spanish narration, available on Spotify, Apple Music, Amazon Music, YouTube Music, Deezer and TIDAL."
+    ]
+   ]
+  },
+  {
+   "slug": "moorkhe-naal-na-lujiye",
+   "title": "Moorkhe Naal Na Lujiye",
+   "subtitle": "Do Not Argue With a Fool",
+   "gurmukhi_title": "ਮੂਰਖੈ ਨਾਲਿ ਨ ਲੁਝੀਐ",
+   "theme": "A prayer for arguments, ego and protecting your peace",
+   "intention": "From Asa Di Vaar. When someone is pulling you into a fight you cannot win — at work, at home, online — Guru Nanak's counsel is five lines long and ends with a single instruction.",
+   "source": {
+    "granth": "Sri Guru Granth Sahib Ji",
+    "ang": 473,
+    "raag": "Raag Asa (Asa Di Vaar, Pauri 19)",
+    "writer": "Guru Nanak Dev Ji (Mahalla 1)"
+   },
+   "release_date": "2026-09-02",
+   "duration": "PT4M03S",
+   "image_remote": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ac/28/3f/ac283fed-4947-d3dc-1efd-933258b0e809/artwork.jpg/1400x1400bb.jpg",
+   "links": {
+    "Spotify": "https://open.spotify.com/track/67oqzrhcWczGkceowNoQ8l",
+    "Apple Music": "https://music.apple.com/us/album/moorkhe-naal-na-lujiye-do-not-argue-with-a-fool/6807999613?i=6807999616",
+    "YouTube": "https://www.youtube.com/watch?v=lI27OjRj_0c",
+    "YouTube Music": "https://music.youtube.com/watch?v=kXThYtZ1rhM",
+    "Amazon Music": "https://music.amazon.com/albums/B0HHL8CH53",
+    "Deezer": "https://www.deezer.com/us/album/1069481431",
+    "TIDAL": "https://listen.tidal.com/track/557862220",
+    "All platforms": "https://song.link/i/6807999616"
+   },
+   "youtube_id": "lI27OjRj_0c",
+   "verses": [
+    {
+     "g": "ਸਭੁ ਕੋ ਆਖੈ ਆਪਣਾ ਜਿਸੁ ਨਾਹੀ ਸੋ ਚੁਣਿ ਕਢੀਐ ॥",
+     "t": "Sabh ko aakhai aapanaa jis naahee so chun kadheeai.",
+     "e": "Everyone calls You their own, Lord; the one who does not is picked out and cast aside."
+    },
+    {
+     "g": "ਕੀਤਾ ਆਪੋ ਆਪਣਾ ਆਪੇ ਹੀ ਲੇਖਾ ਸੰਢੀਐ ॥",
+     "t": "Keetaa aapo aapanaa aape hee lekhaa sandheeai.",
+     "e": "Each one receives the fruit of their own actions; the account is settled by oneself."
+    },
+    {
+     "g": "ਜਾ ਰਹਣਾ ਨਾਹੀ ਐਤੁ ਜਗਿ ਤਾ ਕਾਇਤੁ ਗਾਰਬਿ ਹੰਢੀਐ ॥",
+     "t": "Jaa rahanaa naahee ait jag taa kaait gaarab handheeai.",
+     "e": "Since no one is to remain in this world, why ruin yourself in pride?"
+    },
+    {
+     "g": "ਮੰਦਾ ਕਿਸੈ ਨ ਆਖੀਐ ਪੜਿ ਅਖਰੁ ਏਹੋ ਬੁਝੀਐ ॥",
+     "t": "Mandaa kisai na aakheeai parh akhar eho bujheeai.",
+     "e": "Do not call anyone bad; read these words and understand this."
+    },
+    {
+     "g": "ਮੂਰਖੈ ਨਾਲਿ ਨ ਲੁਝੀਐ ॥੧੯॥",
+     "t": "Moorakhai naal na lujheeai. ||19||",
+     "e": "Do not argue with a fool. ||19||",
+     "key": true
+    }
+   ],
+   "keywords": [
+    "Moorkhe Naal Na Lujiye",
+    "Murkhe Naal Na Lujheai",
+    "Murkhe Naal Na Lujiye",
+    "Moorkhe Naal Na Lujhiye",
+    "Murkhai Naal Na Lujhiai",
+    "Moorakhai Naal Na Lujheeai",
+    "Moorkhe Nal Na Lujiye",
+    "Murkhe Nal Na Lujhiye",
+    "Mandaa Kisai Na Aakhiye",
+    "Manda Kise Na Akhiye",
+    "Sabh Ko Aakhai Aapna",
+    "ਮੂਰਖੈ ਨਾਲਿ ਨ ਲੁਝੀਐ",
+    "ਮੰਦਾ ਕਿਸੈ ਨ ਆਖੀਐ",
+    "Do Not Argue With a Fool",
+    "Don't argue with fools Gurbani",
+    "Asa Di Vaar Pauri 19",
+    "Asa Di Var shabad",
+    "Ang 473 shabad",
+    "Guru Nanak Dev Ji shabad",
+    "shabad for anger",
+    "shabad for ego",
+    "Gurbani for arguments and conflict",
+    "Gurbani for peace of mind",
+    "shabad for toxic people",
+    "MedRise Gurbani",
+    "shabad kirtan",
+    "Gurbani kirtan with English translation",
+    "Gurmukhi lyrics with meaning"
+   ],
+   "image_slug": "moorkhe-naal-na-lujiye"
+  },
+  {
+   "slug": "mere-ram-rai-tu-santa-ka-sant-tere",
+   "title": "Mere Ram Rai",
+   "subtitle": "Tu Santa Ka Sant Tere — In Your Naam, I Find My Peace",
+   "gurmukhi_title": "ਮੇਰੇ ਰਾਮ ਰਾਇ ਤੂੰ ਸੰਤਾ ਕਾ ਸੰਤ ਤੇਰੇ",
+   "theme": "A shabad for surrender, peace and divine trust",
+   "intention": "Guru Arjan Dev Ji's assurance to anyone who feels unprotected: when the Lord's hand rests on your head, fear has nowhere to stand.",
+   "source": {
+    "granth": "Sri Guru Granth Sahib Ji",
+    "ang": 749,
+    "raag": "Raag Suhi",
+    "writer": "Guru Arjan Dev Ji (Mahalla 5)"
+   },
+   "release_date": "2026-09-12",
+   "duration": "PT5M55S",
+   "image_remote": "https://i.ytimg.com/vi/PWbQjz1FUUc/maxresdefault.jpg",
+   "coming_soon": "Now on YouTube — arriving on Spotify, Apple Music and all other platforms shortly.",
+   "links": {
+    "YouTube": "https://www.youtube.com/watch?v=PWbQjz1FUUc",
+    "YouTube Music": "https://music.youtube.com/watch?v=PWbQjz1FUUc"
+   },
+   "youtube_id": "PWbQjz1FUUc",
+   "verses": [
+    {
+     "g": "ਜਿਸ ਕੇ ਸਿਰ ਊਪਰਿ ਤੂੰ ਸੁਆਮੀ ਸੋ ਦੁਖੁ ਕੈਸਾ ਪਾਵੈ ॥",
+     "t": "Jis ke sir oopar toon suaamee so dukh kaisaa paavai.",
+     "e": "When You stand over our heads, O Lord and Master, how can we suffer in pain?"
+    },
+    {
+     "g": "ਬੋਲਿ ਨ ਜਾਣੈ ਮਾਇਆ ਮਦਿ ਮਾਤਾ ਮਰਣਾ ਚੀਤਿ ਨ ਆਵੈ ॥੧॥",
+     "t": "Bol na jaanai maaiaa mad maataa maranaa cheet na aavai. ||1||",
+     "e": "The mortal does not know how to chant Your Name — intoxicated with the wine of Maya, the thought of death never enters the mind. ||1||"
+    },
+    {
+     "g": "ਮੇਰੇ ਰਾਮ ਰਾਇ ਤੂੰ ਸੰਤਾ ਕਾ ਸੰਤ ਤੇਰੇ ॥",
+     "t": "Mere raam raai toon santaa kaa sant tere.",
+     "e": "O my Sovereign Lord, You belong to the Saints, and the Saints belong to You.",
+     "key": true
+    },
+    {
+     "g": "ਤੇਰੇ ਸੇਵਕ ਕਉ ਭਉ ਕਿਛੁ ਨਾਹੀ ਜਮੁ ਨਹੀ ਆਵੈ ਨੇਰੇ ॥੧॥ ਰਹਾਉ ॥",
+     "t": "Tere sevak kau bhau kichh naahee jam nahee aavai nere. ||1|| Rahaau ||",
+     "e": "Your servant is not afraid of anything; even the Messenger of Death cannot come near. ||1|| Pause ||",
+     "rahao": true
+    },
+    {
+     "g": "ਜੋ ਤੇਰੈ ਰੰਗਿ ਰਾਤੇ ਸੁਆਮੀ ਤਿਨੑ ਕਾ ਜਨਮ ਮਰਣ ਦੁਖੁ ਨਾਸਾ ॥",
+     "t": "Jo terai rang raate suaamee tinh kaa janam maran dukh naasaa.",
+     "e": "Those who are attuned to Your love, O my Lord and Master, are released from the pains of birth and death."
+    },
+    {
+     "g": "ਤੇਰੀ ਬਖਸ ਨ ਮੇਟੈ ਕੋਈ ਸਤਿਗੁਰ ਕਾ ਦਿਲਾਸਾ ॥੨॥",
+     "t": "Teree bakhas na metai koee satigur kaa dilaasaa. ||2||",
+     "e": "No one can erase Your blessing; the True Guru has given me this assurance. ||2||"
+    },
+    {
+     "g": "ਨਾਮੁ ਧਿਆਇਨਿ ਸੁਖ ਫਲ ਪਾਇਨਿ ਆਠ ਪਹਰ ਆਰਾਧਹਿ ॥",
+     "t": "Naam dhiaain sukh fal paain aath pahar aaraadheh.",
+     "e": "Those who meditate on the Naam obtain the fruit of peace; all eight watches of the day they worship and adore You."
+    },
+    {
+     "g": "ਤੇਰੀ ਸਰਣਿ ਤੇਰੈ ਭਰਵਾਸੈ ਪੰਚ ਦੁਸਟ ਲੈ ਸਾਧਹਿ ॥੩॥",
+     "t": "Teree saran terai bharvaasai panch dusat lai saadheh. ||3||",
+     "e": "In Your sanctuary, with Your support, they subdue the five villains. ||3||"
+    },
+    {
+     "g": "ਗਿਆਨੁ ਧਿਆਨੁ ਕਿਛੁ ਕਰਮੁ ਨ ਜਾਣਾ ਸਾਰ ਨ ਜਾਣਾ ਤੇਰੀ ॥",
+     "t": "Giaan dhiaan kichh karam na jaanaa saar na jaanaa teree.",
+     "e": "I know nothing of wisdom, meditation or good deeds; I do not know Your worth."
+    },
+    {
+     "g": "ਸਭ ਤੇ ਵਡਾ ਸਤਿਗੁਰੁ ਨਾਨਕੁ ਜਿਨਿ ਕਲ ਰਾਖੀ ਮੇਰੀ ॥੪॥੧੦॥੫੭॥",
+     "t": "Sabh te vadaa satigur naanak jin kal raakhee meree. ||4||10||57||",
+     "e": "Guru Nanak is the greatest of all; He has saved my honour in this Dark Age. ||4||10||57||"
+    }
+   ],
+   "keywords": [
+    "Mere Ram Rai",
+    "Mere Ram Rai Tu Santa Ka Sant Tere",
+    "Mere Raam Raae Toon Santaa Kaa Sant Tere",
+    "Mere Ram Raye Tu Santa Ka Sant Tere",
+    "Mere Ram Rai Tun Santa Ka",
+    "Tere Sevak Ko Bhau Kichh Nahi",
+    "Tere Sevak Kau Bhau Kichhu Naahee",
+    "Jam Nahi Aavai Nere",
+    "Jis Ke Sir Upar Tu Swami",
+    "Jis Ke Sir Oopar Toon Suaamee",
+    "ਮੇਰੇ ਰਾਮ ਰਾਇ ਤੂੰ ਸੰਤਾ ਕਾ ਸੰਤ ਤੇਰੇ",
+    "ਜਿਸ ਕੇ ਸਿਰ ਊਪਰਿ ਤੂੰ ਸੁਆਮੀ",
+    "Raag Suhi shabad",
+    "Ang 749 shabad",
+    "Guru Arjan Dev Ji shabad",
+    "shabad for protection",
+    "powerful prayer for protection",
+    "Gurbani for fear",
+    "Gurbani for safety and security",
+    "shabad for courage",
+    "MedRise Gurbani",
+    "shabad kirtan",
+    "Gurbani kirtan with English translation",
+    "Gurmukhi lyrics with meaning"
+   ],
+   "image_slug": "mere-ram-rai"
+  },
+  {
+   "slug": "jo-prabh-ko-milbo-chahe-khoj-shabad-mein-leh",
+   "title": "Jo Prabh Ko Milbo Chahe",
+   "subtitle": "Khoj Shabad Mein Leh — The Divine is found through the Word of the Guru",
+   "gurmukhi_title": "ਜੋ ਪ੍ਰਭ ਕੋ ਮਿਲਬੋ ਚਹੈ ਖੋਜ ਸਬਦ ਮਹਿ ਲੇਹ",
+   "theme": "A prayer for seeking, devotion and finding the Divine",
+   "intention": "The Dohra sung at the close of every Ardas — the Guru's own instruction on where to look for God: not in a place, but inside the Shabad.",
+   "source": {
+    "granth": "Dohra recited after Ardas",
+    "ang": null,
+    "raag": "Dohra (Panth Prakash, Giani Gian Singh)",
+    "writer": "Traditional — attributed to the Rehatnama tradition"
+   },
+   "release_date": null,
+   "duration": null,
+   "image_slug": "jo-prabh-ko-milbo-chahe",
+   "coming_soon": "Coming soon to Spotify, Apple Music, YouTube and all platforms.",
+   "links": {},
+   "youtube_id": null,
+   "verses": [
+    {
+     "g": "ਆਗਿਆ ਭਈ ਅਕਾਲ ਕੀ ਤਬੀ ਚਲਾਇਓ ਪੰਥ ॥",
+     "t": "Aagiaa bhaee Akaal kee tabee chalaaio Panth.",
+     "e": "By the command of the Timeless One, the Panth was set in motion."
+    },
+    {
+     "g": "ਸਭ ਸਿਖਨ ਕੋ ਹੁਕਮ ਹੈ ਗੁਰੂ ਮਾਨਿਓ ਗ੍ਰੰਥ ॥",
+     "t": "Sabh Sikhan ko hukam hai Guru maanio Granth.",
+     "e": "All Sikhs are commanded: accept the Granth as Guru."
+    },
+    {
+     "g": "ਗੁਰੂ ਗ੍ਰੰਥ ਜੀ ਮਾਨਿਓ ਪ੍ਰਗਟ ਗੁਰਾਂ ਕੀ ਦੇਹ ॥",
+     "t": "Guru Granth Ji maanio pragat Guraan kee deh.",
+     "e": "Know the Guru Granth Sahib as the visible body of the Gurus."
+    },
+    {
+     "g": "ਜੋ ਪ੍ਰਭ ਕੋ ਮਿਲਬੋ ਚਹੈ ਖੋਜ ਸਬਦ ਮਹਿ ਲੇਹ ॥",
+     "t": "Jo Prabh ko milbo chahai khoj Shabad meh leh.",
+     "e": "Whoever wishes to meet God — search for Him within the Shabad.",
+     "key": true
+    }
+   ],
+   "keywords": [
+    "Jo Prabh Ko Milbo Chahe",
+    "Jo Prabh Ko Milbo Chahe Khoj Shabad Mein Leh",
+    "Jo Prabh Ko Milbo Chahai Khoj Shabad Meh Leh",
+    "Jo Prabh Ko Milbo Chahe Khoj Shabad Me Leh",
+    "Khoj Shabad Mein Leh",
+    "Khoj Shabad Meh Leh",
+    "Guru Granth Ji Manio Pragat Guran Ki Deh",
+    "Guru Granth Ji Maneyo Pargat Guran Ki Deh",
+    "Aagya Bhai Akal Ki",
+    "Agya Bhai Akal Ki Tabhi Chalayo Panth",
+    "Sabh Sikhan Ko Hukam Hai Guru Manio Granth",
+    "ਜੋ ਪ੍ਰਭ ਕੋ ਮਿਲਬੋ ਚਹੈ ਖੋਜ ਸਬਦ ਮਹਿ ਲੇਹ",
+    "ਗੁਰੂ ਗ੍ਰੰਥ ਜੀ ਮਾਨਿਓ ਪ੍ਰਗਟ ਗੁਰਾਂ ਕੀ ਦੇਹ",
+    "ਆਗਿਆ ਭਈ ਅਕਾਲ ਕੀ",
+    "Dohra after Ardas",
+    "Ardas dohra with meaning",
+    "shabad for finding God",
+    "Gurbani for devotion",
+    "The Divine is found through the Word of Guru",
+    "MedRise Gurbani",
+    "shabad kirtan",
+    "Gurbani kirtan with English translation",
+    "Gurmukhi lyrics with meaning"
+   ]
+  }
+ ]
+}

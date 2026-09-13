@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://viaaillc.github.io/medrise-gurbani/sitemap.xml
