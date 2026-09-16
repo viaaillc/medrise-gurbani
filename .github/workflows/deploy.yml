@@ -1,1 +1,60 @@
-{"name": "Deploy MedRise Gurbani site", "on": {"push": {"branches": ["main"]}, "workflow_dispatch": {}}, "permissions": {"contents": "read", "pages": "write", "id-token": "write"}, "concurrency": {"group": "pages", "cancel-in-progress": true}, "env": {"GA_ID": "G-PMH5ZBWFB5"}, "jobs": {"deploy": {"runs-on": "ubuntu-latest", "environment": {"name": "github-pages", "url": "${{ steps.deployment.outputs.page_url }}"}, "steps": [{"uses": "actions/checkout@v4"}, {"name": "Unpack site", "run": "set -e; rm -rf unpacked site; mkdir unpacked site; for z in *.zip; do unzip -oq \"$z\" -d unpacked; done; if [ -d docs ]; then cp -r docs/. site/; else cp -r unpacked/*/docs/. site/; fi; cp google*.html site/ 2>/dev/null || true; cp CNAME site/ 2>/dev/null || true; ls site"}, {"name": "Inject Google Analytics", "run": "set -e; TAG=\"<script async src=https://www.googletagmanager.com/gtag/js?id=$GA_ID></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','$GA_ID');document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a.store');if(a){gtag('event','store_click',{platform:a.textContent.trim(),page_title:document.title,link_url:a.href})}var v=t.closest('.video button');if(v){gtag('event','video_play',{page_title:document.title})}});</script>\"; for f in $(find site -name '*.html'); do grep -q googletagmanager \"$f\" || sed -i \"s#</head>#$TAG</head>#\" \"$f\"; done; grep -l googletagmanager site/*.html | wc -l"}, {"uses": "actions/upload-pages-artifact@v3", "with": {"path": "site"}}, {"id": "deployment", "uses": "actions/deploy-pages@v4"}]}}}
+name: Deploy MedRise Gurbani site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  GA_ID: G-PMH5ZBWFB5
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build site from source (falls back to a committed zip)
+        run: |
+          set -e
+          rm -rf site; mkdir site
+          if [ -f medrise-gurbani/build.py ]; then
+            python3 medrise-gurbani/tools/new_shabad.py --check
+            python3 medrise-gurbani/build.py
+            cp -r medrise-gurbani/docs/. site/
+          else
+            rm -rf unpacked; mkdir unpacked
+            for z in *.zip; do unzip -oq "$z" -d unpacked; done
+            cp -r unpacked/*/docs/. site/
+          fi
+          cp google*.html site/ 2>/dev/null || true
+          cp CNAME site/ 2>/dev/null || true
+          ls site
+
+      - name: Inject Google Analytics
+        run: |
+          set -e
+          TAG="<script async src=https://www.googletagmanager.com/gtag/js?id=$GA_ID></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','$GA_ID');document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a.store');if(a){gtag('event','store_click',{platform:a.textContent.trim(),page_title:document.title,link_url:a.href})}var v=t.closest('.video button');if(v){gtag('event','video_play',{page_title:document.title})}});</script>"
+          for f in $(find site -name '*.html'); do
+            grep -q googletagmanager "$f" || sed -i "s#</head>#$TAG</head>#" "$f"
+          done
+          grep -l googletagmanager site/*.html | wc -l
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
