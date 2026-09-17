@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="3000" viewBox="0 0 3000 3000" role="img" aria-label="Ajai Alai — MedRise Gurbani cover art">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F3DCD6"/>
+      <stop offset="0.55" stop-color="#FBF3EA"/>
+      <stop offset="1" stop-color="#F1DDB8"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.78" r="0.5">
+      <stop offset="0" stop-color="#F2CF86" stop-opacity="0.85"/>
+      <stop offset="0.45" stop-color="#F6DDB0" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FBF3EA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="3000" height="3000" fill="url(#sky)"/>
+  <rect width="3000" height="3000" fill="url(#sun)"/>
+  <rect x="140" y="140" width="2720" height="2720" rx="40" fill="none" stroke="#B8862B" stroke-width="8" opacity="0.7"/>
+  <rect x="180" y="180" width="2640" height="2640" rx="28" fill="none" stroke="#B8862B" stroke-width="3" opacity="0.45"/>
+
+  <text x="1500" y="420" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="92" letter-spacing="28" fill="#B8862B">MEDRISE GURBANI</text>
+
+  <g transform="translate(1500 760) scale(9) translate(-24 -24)" fill="none" stroke="#B8862B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 40c-8-4-13-11-13-19 5 1 9 4 13 9 4-5 8-8 13-9 0 8-5 15-13 19z"/>
+    <path d="M24 30c-2-8-1-16 0-22 1 6 2 14 0 22z"/>
+    <path d="M11 21c-4 1-7 3-9 6 6 2 12 2 18 0M37 21c4 1 7 3 9 6-6 2-12 2-18 0"/>
+  </g>
+
+  <text x="1500" y="1360" text-anchor="middle" font-family="'Noto Serif Gurmukhi','Noto Sans Gurmukhi','Mukta Mahee','Gurmukhi MN','Raavi',serif" font-size="250" font-weight="600" fill="#B4566E">ਅਜੈ ਅਲੈ ਅਭੈ ਅਬੈ</text>
+
+  <text x="1500" y="1760" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="380" font-weight="600" fill="#2B2330">Ajai Alai</text>
+
+  <text x="1500" y="1960" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="104" fill="#5E5262">Unconquerable · Undying · Fearless · Ageless</text>
+
+  <text x="1500" y="2170" text-anchor="middle" font-family="Georgia,serif" font-size="70" letter-spacing="40" fill="#B8862B">✦ ✦ ✦</text>
+
+  <text x="1500" y="2380" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="96" fill="#2B2330">Ik Achhree Chhand · Jaap Sahib</text>
+  <text x="1500" y="2510" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="80" fill="#5E5262">Guru Gobind Singh Ji</text>
+
+  <text x="1500" y="2730" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="64" letter-spacing="14" fill="#B8862B">MEDITATE AND RISE WITH GURBANI</text>
+</svg>
