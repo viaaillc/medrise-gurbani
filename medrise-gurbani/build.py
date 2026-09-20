@@ -259,7 +259,7 @@ def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og
 <div class="wrap">
 <header class="top">
   <a class="brand" href="./" aria-label="MedRise Gurbani home">{LOTUS}<span><b>MedRise Gurbani</b><small>Meditate and Rise with Gurbani</small></span></a>
-  <nav class="main" aria-label="Main"><a href="./#shabads">Shabads</a><a href="./#listen">Listen</a><a href="about.html">About</a></nav>
+  <nav class="main" aria-label="Main"><a href="./#shabads">Shabads</a><a href="./#listen">Listen</a><a href="about.html">About</a><a href="epk.html">Press</a></nav>
 </header>
 {body}
 <footer>
@@ -615,6 +615,101 @@ def about():
     return shell("About MedRise Gurbani", "MedRise Gurbani records Shabad Kirtan with Gurmukhi, transliteration and English meaning — Gurbani for understanding.", "about.html", body, og, jsonld)
 
 
+PRESS_EMAIL = "viaai.llc@gmail.com"
+
+def epk():
+    dated = [s for s in SHABADS if s.get("release_date")]
+    dated.sort(key=lambda s: s["release_date"])
+    first_release = dated[0]["release_date"] if dated else None
+    active_since = first_release[:4] if first_release else TODAY[:4]
+    stores = [k for k in PLATFORM_ORDER if k != "All platforms" and any(k in s["links"] for s in SHABADS)]
+
+    facts = [
+        ("Artist / project", "MedRise Gurbani"),
+        ("Genre", "Shabad Kirtan · Gurbani · Devotional"),
+        ("Active since", active_since),
+        ("Releases", str(len(SHABADS)) + (" (and counting)" if SHABADS else "")),
+        ("Distributor", "DistroKid"),
+        ("Available on", ", ".join(stores) if stores else "Streaming platforms"),
+        ("Languages", "English, Punjabi (Gurmukhi), Spanish"),
+        ("Website", BASE + "/"),
+    ]
+    facts_html = "".join(f'<li><b>{esc(k)}</b><span>{esc(v)}</span></li>' for k, v in facts)
+
+    disco_rows = []
+    for s in SHABADS:
+        art = img_src(s["image_slug"], 600, s.get("image_remote"))
+        meta = f'{s["source"]["granth"]}' + (f' · Ang {s["source"]["ang"]}' if s["source"].get("ang") else "")
+        date_txt = s.get("release_date", "Upcoming")
+        disco_rows.append(f"""<a class="card" href="{s['slug']}.html">
+  <div class="art"><img src="{art}" alt="{esc(s['title'])} — MedRise Gurbani cover art" width="600" height="600" loading="lazy"></div>
+  <div><h3>{esc(s['title'])}</h3><div class="gk gurmukhi">{esc(s['gurmukhi_title'])}</div></div>
+  <p class="theme">{esc(s['theme'])}</p>
+  <div class="meta">{esc(meta)} · {esc(date_txt)}</div>
+</a>""")
+
+    photo_items = []
+    for s in SHABADS:
+        art1200 = img_src(s["image_slug"], 1200, s.get("image_remote"))
+        if art1200.startswith("http"):
+            continue
+        photo_items.append(f"""<a class="card" href="{art1200}" download="medrise-gurbani-{s['image_slug']}.jpg">
+  <div class="art"><img src="{art1200}" alt="{esc(s['title'])} cover art — high-resolution download" width="600" height="600" loading="lazy"></div>
+  <div><h3 style="font-size:1.1rem">{esc(s['title'])}</h3><p class="meta" style="margin-top:2px">1200 × 1200 · JPG · Download</p></div>
+</a>""")
+
+    body = f"""
+<section class="section" style="border:0">
+  <div class="eyebrow">Press / Electronic Press Kit</div>
+  <h1 style="margin:12px 0 10px">MedRise Gurbani — Press Kit</h1>
+  <p class="intent" style="max-width:70ch">A one-page reference for journalists, bookers, playlist curators and collaborators: who MedRise Gurbani is, the discography so far, downloadable cover art, and how to get in touch.</p>
+</section>
+
+<section class="section" style="padding-block:0 clamp(28px,5vw,48px)">
+  <ul class="chips" style="gap:10px 22px;list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap">
+    {"".join(f'<li style="border:1px solid var(--line);border-radius:12px;padding:10px 16px;background:var(--surface);min-width:180px"><b style="display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px">{esc(k)}</b><span>{esc(v)}</span></li>' for k, v in facts)}
+  </ul>
+</section>
+
+<section class="info" style="padding-block:clamp(28px,5vw,48px)">
+  <div>
+    <h2>Short bio</h2>
+    <p>MedRise Gurbani records Shabad Kirtan for people who want to understand what they are singing — each release paired with its full Gurmukhi text, a transliteration, and a plain-English meaning.</p>
+    <h2 style="margin-top:26px">Long bio</h2>
+    <p>MedRise Gurbani is a growing series of Shabad Kirtan recordings, each chosen for a real moment people live through — fear before a new beginning, the weight of debt, a mind that will not settle, a night of studying, grief, or the need to be reminded that they are held. Every release is published with its complete Gurmukhi lyrics, a Roman transliteration to sing along with, and a line-by-line English meaning, so the words are never just background — they can be understood, carried, and returned to.</p>
+    <p>Gurbani is quoted from Sri Guru Granth Sahib Ji and Sri Dasam Granth Sahib. Recordings are distributed to Spotify, Apple Music, YouTube, YouTube Music, Amazon Music, Deezer and TIDAL via DistroKid, with select releases also available in Spanish translation.</p>
+  </div>
+  <div>
+    <h2>Fact sheet</h2>
+    <p>MedRise Gurbani began releasing music in {esc(active_since)} and has since put out {esc(str(len(SHABADS)))} shabads, each with a dedicated page of lyrics, meaning and FAQ on this site. The project also runs daily Gurbani content on Instagram (@medrise_gurbani), Facebook (MedRise-Gurbani) and TikTok.</p>
+    <h2 style="margin-top:26px">For interviews &amp; features</h2>
+    <p>MedRise Gurbani is available for interviews, playlist consideration, features and collaborations. Please reach out using the press contact below with your outlet, deadline and what you're working on.</p>
+  </div>
+</section>
+
+<section class="section" id="discography">
+  <div class="section-head"><div><div class="eyebrow">Discography</div><h2>Every release</h2><p>Full details, lyrics and meaning for each shabad are one click away.</p></div></div>
+  <div class="grid">{''.join(disco_rows)}</div>
+</section>
+
+<section class="section" id="photos">
+  <div class="section-head"><div><div class="eyebrow">Photography</div><h2>High-resolution cover art</h2><p>Cover art for editorial or playlist use, 1200 × 1200 JPG. Click any image to download. For a different size or format, use the press contact below.</p></div></div>
+  <div class="grid">{''.join(photo_items)}</div>
+</section>
+
+<section class="section" id="contact">
+  <div class="eyebrow">Press contact</div>
+  <h2 style="margin:10px 0 14px">Get in touch</h2>
+  <p class="intent">For interview requests, playlist pitches, press features or booking enquiries:</p>
+  <div class="stores stores-big"><a class="store" href="mailto:{esc(PRESS_EMAIL)}" style="--brand:#B8862B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.01L12 13l8-5.99V7H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 9.24V17h16V9.24z"/></svg><span>{esc(PRESS_EMAIL)}</span></a></div>
+  <p class="eyebrow" style="margin-top:26px">Follow &amp; listen</p>{platform_buttons(SITE['artist_links'])}
+</section>
+"""
+    jsonld = {"@context": "https://schema.org", "@graph": [ORG_LD, {"@type": "AboutPage", "url": f"{BASE}/epk.html", "name": "MedRise Gurbani — Press Kit", "about": {"@id": f"{BASE}/#artist"}}]}
+    og = f"{BASE}/{img_src(dated[-1]['image_slug'],1200,dated[-1].get('image_remote'))}" if dated else f"{BASE}/{img_src('inhi-ki-kirpa',1200)}"
+    return shell("MedRise Gurbani — Electronic Press Kit (EPK)", "Bio, discography, downloadable high-resolution cover art and press contact for MedRise Gurbani — for journalists, bookers and playlist curators.", "epk.html", body, og, jsonld)
+
+
 def not_found():
     body = '<section class="section" style="border:0;text-align:center"><div class="eyebrow">404</div><h1 style="margin:12px 0">That page has moved on</h1><p style="color:var(--ink-2)">Try the <a href="./">home page</a> — every shabad is listed there.</p></section>'
     return shell("Page not found — MedRise Gurbani", "Page not found.", "404.html", body, f"{BASE}/{img_src('inhi-ki-kirpa',1200)}", {"@context": "https://schema.org", "@type": "WebPage", "name": "Not found"}, extra_head='<meta name="robots" content="noindex">')
@@ -633,6 +728,7 @@ def build():
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUT / "index.html").write_text(home(), encoding="utf-8")
     (OUT / "about.html").write_text(about(), encoding="utf-8")
+    (OUT / "epk.html").write_text(epk(), encoding="utf-8")
     (OUT / "404.html").write_text(not_found(), encoding="utf-8")
     variants = []
     for i, s in enumerate(SHABADS):
@@ -641,7 +737,7 @@ def build():
             (OUT / f"{s['variant']['slug']}.html").write_text(variant_page(s), encoding="utf-8")
             variants.append(s)
 
-    urls = [("", "1.0", "weekly")] + [(f"{s['slug']}.html", "0.9", "monthly") for s in SHABADS] + [(f"{s['variant']['slug']}.html", "0.8", "monthly") for s in variants] + [("about.html", "0.4", "yearly")]
+    urls = [("", "1.0", "weekly")] + [(f"{s['slug']}.html", "0.9", "monthly") for s in SHABADS] + [(f"{s['variant']['slug']}.html", "0.8", "monthly") for s in variants] + [("about.html", "0.4", "yearly"), ("epk.html", "0.5", "yearly")]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for u, p, f in urls:
         loc = f"{BASE}/{u}" if u else BASE + "/"
