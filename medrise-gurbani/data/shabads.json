@@ -705,10 +705,12 @@
     "raag": "Ik Achhree Chhand (Chhand 189–196)",
     "writer": "Guru Gobind Singh Ji (Patshahi 10)"
    },
-   "release_date": null,
+   "release_date": "2026-09-20",
    "duration": null,
    "image_slug": "ajai-alai",
-   "links": {},
+   "links": {
+    "Spotify": "https://open.spotify.com/track/6ZHSBXnU5HvLtmTpBHKNH9"
+   },
    "youtube_id": null,
    "verses": [
     {
@@ -833,7 +835,60 @@
     ]
    ],
    "image_remote": "images/ajai-alai.svg",
-   "coming_soon": "Coming soon to Spotify, Apple Music, YouTube and all platforms."
+   "coming_soon": "Now on Spotify — arriving on Apple Music, YouTube and other platforms shortly."
+  },
+  {
+   "slug": "waheguru-naam-simran",
+   "title": "Waheguru Naam Simran",
+   "subtitle": "Peaceful Sikh Meditation",
+   "gurmukhi_title": "ਵਾਹਿਗੁਰੂ ਨਾਮ ਸਿਮਰਨ",
+   "theme": "A prayer for daily meditation, stillness and remembrance of Naam",
+   "intention": "Sit with this when you want nothing to parse and nothing to study — just Waheguru, repeated, until the mind settles into it. A one-hour Naam Simran for meditation, sleep or a quiet room.",
+   "source": {
+    "granth": "Naam Simran — remembrance of the Sikh Naam",
+    "ang": null,
+    "raag": null,
+    "writer": "Traditional — the Sikh Naam, Waheguru"
+   },
+   "release_date": "2026-09-20",
+   "duration": "PT60M0S",
+   "image_remote": "https://i.scdn.co/image/ab67616d0000b273a2ef6a122d92dc4401b40883",
+   "coming_soon": "Now on Spotify — arriving on Apple Music, YouTube and other platforms shortly.",
+   "links": {
+    "Spotify": "https://open.spotify.com/track/31jMIiYtO6IZDFsolVTA1M"
+   },
+   "youtube_id": null,
+   "verses": [
+    {
+     "g": "ਵਾਹਿਗੁਰੂ ਵਾਹਿਗੁਰੂ",
+     "t": "Waheguru Waheguru.",
+     "e": "Wondrous Lord, Wondrous Lord — the Sikh Naam, repeated as a simple meditation. No verse to parse; just the sound, and the stillness it settles into.",
+     "key": true
+    }
+   ],
+   "keywords": [
+    "Waheguru Naam Simran",
+    "Waheguru Simran",
+    "Waheguru Waheguru",
+    "Waheguru Naam Jaap",
+    "Waheguru chant",
+    "Naam Simran meditation",
+    "Peaceful Sikh Meditation",
+    "1 hour Waheguru Simran",
+    "1 hour Waheguru Waheguru",
+    "ਵਾਹਿਗੁਰੂ ਨਾਮ ਸਿਮਰਨ",
+    "ਵਾਹਿਗੁਰੂ ਵਾਹਿਗੁਰੂ",
+    "shabad for meditation",
+    "Gurbani for stillness",
+    "Gurbani for sleep",
+    "Naam Japna",
+    "Sikh meditation chant",
+    "MedRise Gurbani",
+    "shabad kirtan",
+    "Gurbani kirtan with English translation",
+    "Gurmukhi lyrics with meaning"
+   ],
+   "image_slug": "waheguru-naam-simran"
   }
  ]
 }
