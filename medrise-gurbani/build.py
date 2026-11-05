@@ -763,4 +763,9 @@ def build():
     print(f"Built {len(SHABADS)} shabad pages + home/about/404 into {OUT}")
 
 if __name__ == "__main__":
-    build()
+    try:
+        import listen_hub  # also builds the Spotify / Apple Music / YouTube hub page (listen_hub.py + data/listen.json)
+    except ImportError:
+        build()
+    else:
+        listen_hub.main()
