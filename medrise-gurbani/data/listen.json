@@ -1,0 +1,55 @@
+{
+  "_about": "Extra data for the 'Listen everywhere' hub page (medrise-gurbani-spotify-apple-music-youtube.html), built by listen_hub.py. Shabads in shabads.json appear automatically. extra_tracks = releases that don't have a full entry in shabads.json yet (skipped once they do). link_additions = store links to add to existing shabads.json entries at build time (values already in shabads.json always win); safe to delete once copied into shabads.json with tools/new_shabad.py --set.",
+  "playlists": [
+    {
+      "name": "Medrise Gurbani — every shabad",
+      "platform": "Spotify",
+      "url": "https://open.spotify.com/playlist/72k53KIqDrdIyBhJ5JKmvN",
+      "embed": "https://open.spotify.com/embed/playlist/72k53KIqDrdIyBhJ5JKmvN?utm_source=generator"
+    },
+    {
+      "name": "Gurbani en Español | MedRise Gurbani (Spanish Version)",
+      "platform": "Spotify",
+      "url": "https://open.spotify.com/playlist/6W7MlauH4U4UahVFHpZnLv",
+      "lang": "es"
+    }
+  ],
+  "extra_tracks": [
+    {
+      "slug": "nanak-chinta-mat-karo",
+      "title": "Nanak Chinta Mat Karo",
+      "gurmukhi_title": "ਨਾਨਕ ਚਿੰਤਾ ਮਤਿ ਕਰਹੁ",
+      "theme": "A shabad for worry, anxiety and trusting that you will be provided for",
+      "source": {
+        "granth": "Sri Guru Granth Sahib Ji",
+        "ang": 955,
+        "raag": "Raag Ramkali (Ramkali Ki Vaar, Salok)",
+        "writer": "Guru Angad Dev Ji (Mahalla 2)"
+      },
+      "release_date": "2026-10-04",
+      "duration": "PT4M52S",
+      "image_remote": "https://i.scdn.co/image/ab67616d0000b2731f0fa1669fd168b633ad4d24",
+      "links": {
+        "Spotify": "https://open.spotify.com/track/0kHeT46uVDbF7sB3WKweiO",
+        "Apple Music": "https://music.apple.com/us/album/nanak-chinta-mat-karo-%E0%A8%A8-%E0%A8%A8%E0%A8%95-%E0%A8%9A-%E0%A8%A4-%E0%A8%AE%E0%A8%A4-%E0%A8%95%E0%A8%B0%E0%A8%B9-single/6819377486?i=6819377487",
+        "All platforms": "https://song.link/i/6819377487"
+      }
+    }
+  ],
+  "link_additions": {
+    "ajai-alai": {
+      "links": {
+        "Apple Music": "https://music.apple.com/us/album/ajay-alai-ik-achree-chand-powerful-jaap-sahib-prayer/6812283870?i=6812283872",
+        "All platforms": "https://song.link/i/6812283872"
+      },
+      "coming_soon": "Now on Spotify and Apple Music — YouTube and other platforms coming shortly."
+    },
+    "waheguru-naam-simran": {
+      "links": {
+        "Apple Music": "https://music.apple.com/us/album/waheguru-naam-simran-peaceful-sikh-meditation/6814374255?i=6814374256",
+        "All platforms": "https://song.link/i/6814374256"
+      },
+      "coming_soon": "Now on Spotify and Apple Music — YouTube and other platforms coming shortly."
+    }
+  }
+}
