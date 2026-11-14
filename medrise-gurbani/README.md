@@ -1,5 +1,13 @@
 # MedRise Gurbani — website
 
+**Live address (since 2026-11-14): https://med-rise.com/gurbani/shabads/** — GitHub Actions still builds this repo
+and deploys it to GitHub Pages (viaaillc.github.io/medrise-gurbani); a Cloudflare Pages Function in
+viaaillc/medrise-home serves that build under med-rise.com, so pushing here is still all a release needs.
+`site.url` in data/shabads.json is the med-rise.com address (canonical, Open Graph, JSON-LD, sitemap); `site.legacy_url`
+makes pages opened on the old github.io address send visitors to the same page on med-rise.com (only after checking
+it answers there). `tools/fetch_store_art.py <slug>` swaps a placeholder cover for the real store artwork once a
+release is on Apple Music or Spotify (run it on the Mac: it needs internet access).
+
 Free static site for GitHub Pages. One page per shabad with Gurmukhi, transliteration,
 English meaning, store links (Spotify, Apple Music, YouTube, YouTube Music, Amazon Music,
 Deezer, TIDAL, song.link), JSON-LD `MusicRecording` schema, Open Graph tags, sitemap and a

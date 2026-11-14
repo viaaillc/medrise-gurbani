@@ -2,7 +2,8 @@
  "site": {
   "name": "MedRise Gurbani",
   "tagline": "Meditate and Rise with Gurbani",
-  "url": "https://viaaillc.github.io/medrise-gurbani",
+  "url": "https://med-rise.com/gurbani/shabads",
+  "legacy_url": "https://viaaillc.github.io/medrise-gurbani",
   "description": "MedRise Gurbani releases Shabad Kirtan with Gurmukhi, transliteration and English translation — a prayer for every moment: protection, debt relief, peace, study and success. Listen on Spotify, Apple Music, YouTube, Amazon Music and more.",
   "artist_links": {
    "Spotify": "https://open.spotify.com/artist/0J71hMTTyoPkpzUqB35CkF",

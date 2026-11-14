@@ -4,7 +4,7 @@
 Reads data/shabads.json, writes a complete static site into docs/ (GitHub Pages).
 Run:  python3 build.py
 """
-import json, os, shutil, html, datetime, pathlib
+import json, os, re, shutil, html, datetime, pathlib
 
 ROOT = pathlib.Path(__file__).parent
 OUT = ROOT / "docs"
@@ -12,6 +12,21 @@ DATA = json.load(open(ROOT / "data" / "shabads.json", encoding="utf-8"))
 SITE = DATA["site"]
 SHABADS = DATA["shabads"]
 BASE = SITE["url"].rstrip("/")
+# 2026-11-14: the library moved from GitHub Pages to med-rise.com/gurbani/shabads (served there by a Cloudflare Pages
+# Function in viaaillc/medrise-home that fetches this same GitHub Pages build). GitHub Pages cannot send a 301, so on
+# the old address every page checks that the same page answers on med-rise.com (HEAD; the Function allows this origin
+# by CORS) and then sends the visitor there. If med-rise.com does not answer, the visitor simply stays on the old copy.
+# Canonical, Open Graph, JSON-LD and the sitemap already name the med-rise.com URLs.
+LEGACY = SITE.get("legacy_url", "").rstrip("/")
+LEGACY_REDIRECT = ""
+if LEGACY:
+    _host, _path = re.match(r"https?://([^/]+)(/[^?#]*)?", LEGACY).groups()
+    _strip = re.escape(_path or "").replace("/", "\\/")
+    LEGACY_REDIRECT = (
+        "<script>(function(){var l=location;if(l.hostname!==" + json.dumps(_host) + "||!window.fetch)return;"
+        "var u=" + json.dumps(BASE) + "+l.pathname.replace(/^" + _strip + "/,\"\")+l.search;"
+        "fetch(u,{method:\"HEAD\",mode:\"cors\",credentials:\"omit\"})"
+        ".then(function(r){if(r.ok)l.replace(u+l.hash)},function(){})})();</script>\n")
 TODAY = datetime.date.today().isoformat()
 
 def esc(s):
@@ -227,7 +242,7 @@ def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og
 <html lang="{lang}" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+{LEGACY_REDIRECT}<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 {f'<meta name="keywords" content="{esc(keywords)}">' if keywords else ''}
