@@ -39,6 +39,10 @@ def img_src(slug_or_shabad, size=1200, remote_fallback=None):
         return f"images/{slug}-{size}.jpg"
     return remote_fallback or f"images/{slug}-{size}.jpg"
 
+def abs_url(src):
+    """Absolute URL for an image path from img_src(): store artwork links are already absolute."""
+    return src if src.startswith("http") else f"{BASE}/{src}"
+
 # ----------------------------------------------------------------------------- platforms
 PLATFORM_META = {
     "Spotify":       ("#1DB954", "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.3 14.4a.7.7 0 0 1-1 .2c-2.6-1.6-5.9-2-9.8-1.1a.7.7 0 0 1-.3-1.4c4.3-1 8-.5 10.9 1.3.3.2.4.7.2 1zm1.1-2.6a.9.9 0 0 1-1.2.3c-3-1.8-7.5-2.4-11-1.3a.9.9 0 1 1-.5-1.7c4-1.2 9-.6 12.4 1.5.4.3.6.8.3 1.2zm.1-2.7c-3.6-2.1-9.5-2.3-12.9-1.3a1.1 1.1 0 1 1-.6-2c3.9-1.2 10.4-1 14.5 1.5a1.1 1.1 0 0 1-1 1.8z"),
@@ -357,7 +361,7 @@ def home():
                 [(f"{BASE}/{s['slug']}.html", s["title"]) for s in SHABADS] +
                 [(f"{BASE}/{s['variant']['slug']}.html", s["variant"]["title"]) for s in SHABADS if s.get("variant", {}).get("slug")])]},
     ]}
-    og = f"{BASE}/{img_src(latest[0]['image_slug'],1200,latest[0].get('image_remote'))}"
+    og = abs_url(img_src(latest[0]['image_slug'],1200,latest[0].get('image_remote')))
     kw = ", ".join(["MedRise Gurbani", "shabad kirtan", "Gurbani with English translation", "Gurmukhi transliteration", "shabad for protection", "shabad for debt relief", "shabad for peace", "shabad for students"] + [s["title"] for s in SHABADS])
     return shell("MedRise Gurbani — Shabad Kirtan with Gurmukhi, Transliteration & Meaning", SITE["description"], "", body, og, jsonld, keywords=kw)
 
@@ -721,7 +725,7 @@ def epk():
 </section>
 """
     jsonld = {"@context": "https://schema.org", "@graph": [ORG_LD, {"@type": "AboutPage", "url": f"{BASE}/epk.html", "name": "MedRise Gurbani — Press Kit", "about": {"@id": f"{BASE}/#artist"}}]}
-    og = f"{BASE}/{img_src(dated[-1]['image_slug'],1200,dated[-1].get('image_remote'))}" if dated else f"{BASE}/{img_src('inhi-ki-kirpa',1200)}"
+    og = abs_url(img_src(dated[-1]['image_slug'],1200,dated[-1].get('image_remote'))) if dated else f"{BASE}/{img_src('inhi-ki-kirpa',1200)}"
     return shell("MedRise Gurbani — Electronic Press Kit (EPK)", "Bio, discography, downloadable high-resolution cover art and press contact for MedRise Gurbani — for journalists, bookers and playlist curators.", "epk.html", body, og, jsonld)
 
 
