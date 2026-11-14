@@ -16,6 +16,8 @@ concurrency:
 
 env:
   GA_ID: G-PMH5ZBWFB5
+  # Second destination: property "MedRise Gurbani" in the MedRise Analytics account (admin@med-rise.com).
+  GA_ID2: G-Y5M45061J9
 
 jobs:
   deploy:
@@ -46,7 +48,7 @@ jobs:
       - name: Inject Google Analytics
         run: |
           set -e
-          TAG="<script async src=https://www.googletagmanager.com/gtag/js?id=$GA_ID></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','$GA_ID');document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a.store');if(a){gtag('event','store_click',{platform:a.textContent.trim(),page_title:document.title,link_url:a.href})}var v=t.closest('.video button');if(v){gtag('event','video_play',{page_title:document.title})}});</script>"
+          TAG="<script async src=https://www.googletagmanager.com/gtag/js?id=$GA_ID></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','$GA_ID');gtag('config','$GA_ID2');document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a.store');if(a){gtag('event','store_click',{platform:a.textContent.trim(),page_title:document.title,link_url:a.href})}var v=t.closest('.video button');if(v){gtag('event','video_play',{page_title:document.title})}});</script>"
           for f in $(find site -name '*.html'); do
             grep -q googletagmanager "$f" || sed -i "s#</head>#$TAG</head>#" "$f"
           done
