@@ -52,6 +52,15 @@ jobs:
           done
           grep -l googletagmanager site/*.html | wc -l
 
+      - name: Inject MedRise visit count (cookieless, counted on med-rise.com for the weekly traffic email)
+        run: |
+          set -e
+          HIT="<script>(function(){try{var b=JSON.stringify({p:location.pathname,u:new URLSearchParams(location.search).get('utm_source')||'',r:document.referrer||''});if(navigator.sendBeacon)navigator.sendBeacon('https://med-rise.com/api/hit',new Blob([b],{type:'text/plain'}))}catch(e){}})();</script>"
+          for f in $(find site -name '*.html'); do
+            grep -q 'med-rise.com/api/hit' "$f" || sed -i "s#</body>#$HIT</body>#" "$f"
+          done
+          grep -l 'med-rise.com/api/hit' site/*.html | wc -l
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
