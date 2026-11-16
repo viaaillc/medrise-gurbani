@@ -233,10 +233,55 @@ footer .links a{text-decoration:none;color:var(--ink-2);font-weight:600} footer 
 .ornament{color:var(--gold);letter-spacing:.4em;font-size:.9rem}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* share options (2026-11-15) */
+.share-band{padding-block:clamp(28px,5vw,48px);border-top:1px solid var(--line)}
+.share-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 32px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 26px}
+.share-h{font-family:var(--serif);font-weight:600;font-size:1.6rem;line-height:1.15;margin:6px 0 2px}
+.share-sub{margin:0;color:var(--ink-2)}
+.share-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.share-chip{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;border-radius:999px;border:1px solid var(--line);background:var(--ground);color:var(--ink);font:600 .9rem/1 var(--sans);text-decoration:none;cursor:pointer}
+.share-chip:hover{border-color:var(--gold);color:var(--ink)}
+.share-primary{background:var(--ink);border-color:var(--ink);color:var(--ground)}
+.share-primary:hover{color:var(--ground)}
+.share-chip[hidden]{display:none}
+@media (hover:hover) and (pointer:fine){.share-touch{display:none}}
+.share-status{grid-column:1/-1;margin:0;font-weight:600;font-size:.9rem;color:var(--gold)}
+.share-status:empty{display:none}
+@media (max-width:760px){.share-card{grid-template-columns:1fr;padding:20px}.share-actions{justify-content:flex-start}}
+@media print{.share-band{display:none}}
 """
 
 # ----------------------------------------------------------------------------- shell
 LOTUS = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M24 40c-8-4-13-11-13-19 5 1 9 4 13 9 4-5 8-8 13-9 0 8-5 15-13 19z"/><path d="M24 30c-2-8-1-16 0-22 1 6 2 14 0 22z"/><path d="M11 21c-4 1-7 3-9 6 6 2 12 2 18 0M37 21c4 1 7 3 9 6-6 2-12 2-18 0"/></svg>'
+
+# Share options on every page (Preety, 2026-11-15: "all medrise pages should have a share option"). WhatsApp first: most
+# kirtan gets passed around there. Shares the canonical med-rise.com address and the page title only.
+SHARE_TEXT = {
+    "en": {"eyebrow": "Share", "song": "Share this shabad", "page": "Share this page", "sub": "Send it to family and friends.",
+           "share": "Share", "copy": "Copy link", "copied": "Link copied", "email": "Email", "text": "Text"},
+    "es": {"eyebrow": "Compartir", "song": "Comparte este shabad", "page": "Comparte esta página", "sub": "Envíalo a tu familia y amigos.",
+           "share": "Compartir", "copy": "Copiar enlace", "copied": "Enlace copiado", "email": "Correo", "text": "Mensaje"},
+}
+SHARE_JS = ("<script>(function(){var c=document.querySelector('[data-share]');if(!c)return;var d={title:c.getAttribute('data-title'),url:c.getAttribute('data-url')},"
+            "st=c.querySelector('.share-status'),ok=false;try{ok=!!(navigator.share&&(!navigator.canShare||navigator.canShare(d)))}catch(e){}"
+            "var n=c.querySelector('[data-share-native]');if(n&&ok){n.hidden=false;n.addEventListener('click',function(){navigator.share(d).catch(function(){})})}"
+            "var b=c.querySelector('[data-share-copy]');if(!b||!navigator.clipboard)return;b.hidden=false;b.addEventListener('click',function(){"
+            "navigator.clipboard.writeText(d.url).then(function(){st.textContent=c.getAttribute('data-copied');setTimeout(function(){st.textContent=''},2600)},function(){})})})();</script>")
+
+def share_band(canonical, title, og_type="website", lang="en"):
+    from urllib.parse import quote
+    T = SHARE_TEXT.get(lang, SHARE_TEXT["en"])
+    u, t, both = quote(canonical, safe=""), quote(title, safe=""), quote(f"{title} {canonical}", safe="")
+    nets = [("WhatsApp", f"https://wa.me/?text={both}", "ext"), ("Facebook", f"https://www.facebook.com/sharer/sharer.php?u={u}", "ext"),
+            (T["text"], f"sms:?&body={both}", "touch"), (T["email"], f"mailto:?subject={t}&body={quote(title + chr(10) + chr(10) + canonical, safe='')}", ""),
+            ("X", f"https://twitter.com/intent/tweet?url={u}&text={t}", "ext")]
+    chips = "".join(f'<a class="share-chip{" share-touch" if k == "touch" else ""}" href="{esc(h)}"{" target=\"_blank\" rel=\"noopener\"" if k == "ext" else ""}>{esc(l)}</a>' for l, h, k in nets)
+    return (f'<section class="share-band" id="share" aria-labelledby="share-h"><div class="share-card" data-share data-url="{esc(canonical)}" data-title="{esc(title)}" data-copied="{esc(T["copied"])}">'
+            f'<div><div class="eyebrow">{esc(T["eyebrow"])}</div><h2 class="share-h" id="share-h">{esc(T["song"] if og_type == "music.song" else T["page"])}</h2><p class="share-sub">{esc(T["sub"])}</p></div>'
+            f'<div class="share-actions"><button class="share-chip share-primary" type="button" data-share-native hidden>{esc(T["share"])}</button>{chips}'
+            f'<button class="share-chip" type="button" data-share-copy hidden>{esc(T["copy"])}</button></div>'
+            f'<p class="share-status" role="status" aria-live="polite"></p></div></section>{SHARE_JS}')
 
 def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og_type="website", keywords="", lang="en", alternates=None):
     canonical = f"{BASE}/{canonical_path}".rstrip("/") + ("/" if canonical_path == "" else "")
@@ -281,6 +326,7 @@ def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og
   <nav class="main" aria-label="Main"><a href="./#shabads">Shabads</a><a href="./#listen">Listen</a><a href="about.html">About</a><a href="epk.html">Press</a></nav>
 </header>
 {body}
+{"" if "noindex" in extra_head else share_band(canonical, title, og_type, lang)}
 <footer>
   <div class="ornament" aria-hidden="true">✦ ✦ ✦</div>
   <div class="row">

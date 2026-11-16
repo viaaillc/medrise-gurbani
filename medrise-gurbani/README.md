@@ -13,6 +13,11 @@ English meaning, store links (Spotify, Apple Music, YouTube, YouTube Music, Amaz
 Deezer, TIDAL, song.link), JSON-LD `MusicRecording` schema, Open Graph tags, sitemap and a
 keyword footer of spelling variations.
 
+## Share options (2026-11-15)
+Every page except the 404 ends with a share band (`share_band()` in build.py, called from `shell()`): WhatsApp, Facebook,
+Text (phones), Email, X, Copy link and the phone's share sheet. "Share this shabad" on shabad pages, Spanish wording on
+the Spanish pages (`SHARE_TEXT`). Only the canonical med-rise.com address and the page title are shared.
+
 ## Deploy (about 5 minutes)
 
 1. Create a new GitHub repository (e.g. `medrise-gurbani`). Public is fine.
