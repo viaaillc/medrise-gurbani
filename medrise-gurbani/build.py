@@ -264,6 +264,9 @@ h3{font-family:var(--sans);font-size:1.18rem;font-weight:650;letter-spacing:-.01
 .foot-mail a{text-decoration:underline;text-underline-offset:2px}
 .foot-legal{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;line-height:1.6;display:grid;gap:8px}
 .foot-legal p{margin:0}
+.lib-more{font-size:.92rem}
+.lib-more a{color:var(--accent-ink);font-weight:600;text-decoration:none}
+.lib-more a:hover{color:var(--navy);text-decoration:underline}
 @media (max-width:920px){.foot-grid{grid-template-columns:1fr 1fr}}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
@@ -345,7 +348,10 @@ def site_header():
     cur = ' aria-current="page"'
     items = "".join(f'<li><a href="{esc(u)}"{cur if n == "Shabads" else ""}>{esc(n)}</a></li>' for n, u in GB_NAV)
     mob = "".join(f'<a href="{esc(u)}">{esc(n)}</a>' for n, u in GB_NAV)
-    return (f'<header class="site-header gb-header"><div class="wrap nav">\n{gb_brand(38)}\n'
+    # "top" + a footer element: on med-rise.com the /gurbani/shabads/ Function (viaaillc/medrise-home) removes
+    # header.top and footer and inserts the MedRise Gurbani header and footer from that site's own build, so the menu
+    # there always follows the main site. These copies are what the github.io build shows.
+    return (f'<header class="site-header gb-header top"><a class="skip" href="#main">Skip to content</a><div class="wrap nav">\n{gb_brand(38)}\n'
             f'<ul class="menu">{items}<li><a class="cta" href="mailto:{GB_MAIL}">Contact</a></li></ul>\n'
             f'<details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile">{mob}<a href="mailto:{GB_MAIL}">Contact</a></nav></details>\n'
             f'</div></header>')
@@ -418,9 +424,8 @@ def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og
 <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
 {site_header()}
-<main id="main"><div class="wrap">
+<main><div class="wrap" id="main">
 {body}
 {"" if "noindex" in extra_head else share_band(canonical, title, og_type, lang)}
 </div></main>
@@ -485,7 +490,8 @@ def home():
 <section class="section">
   <div class="info" style="border:0;padding-block:0">
     <div><h2>Why MedRise Gurbani</h2><p>MedRise Gurbani was created so that anyone — whether they grew up with kirtan or are hearing it for the first time — can understand what they are singing. Every shabad is chosen for a real-life need and presented with its meaning, so the Guru's words can be carried into an exam room, a hospital shift, a new city, or a hard conversation.</p></div>
-    <div><h2>How to use these pages</h2><p>Read the Gurmukhi if you can; if not, sing from the transliteration. Read the meaning once before you listen, then let the shabad play. The highlighted line on each page is the <em>rahao</em> or central line — the one to hold onto through the day.</p></div>
+    <div><h2>How to use these pages</h2><p>Read the Gurmukhi if you can; if not, sing from the transliteration. Read the meaning once before you listen, then let the shabad play. The highlighted line on each page is the <em>rahao</em> or central line — the one to hold onto through the day.</p>
+    <p class="lib-more"><a href="about.html">About MedRise Gurbani</a> · <a href="epk.html">Press kit</a> · <a href="{HUB_SLUG}.html">Every shabad on every app</a></p></div>
   </div>
 </section>
 """
