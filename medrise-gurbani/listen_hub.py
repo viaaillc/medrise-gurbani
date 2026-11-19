@@ -25,43 +25,45 @@ HUB_STORES = ["Spotify", "Apple Music", "YouTube", "YouTube Music", "All platfor
 HUB_CSS = r"""
 /* listen hub */
 .hub-link{margin:16px 0 0;font-size:.95rem}
-.hub-link a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
+.hub-link a{color:var(--gold-ink);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
+.hub-link a:hover{color:var(--navy)}
 .hub-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(28px,5vw,64px)}
-.hub-hero .lede{font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.45rem);line-height:1.45;color:var(--ink-2);max-width:40ch;margin:16px 0 22px}
-.hub-hero .gk{font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--rose);margin-top:12px}
+.hub-hero .lede{font-size:clamp(1.08rem,1.6vw,1.24rem);line-height:1.7;color:var(--ink-2);max-width:36em;margin:16px 0 22px}
+.hub-hero .gk{font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--gold-ink);margin-top:12px;line-height:1.5}
 .hub-hero .more{margin-top:14px}
-.embed{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface-2)}
+.embed{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--surface-2)}
 .embed iframe{display:block;width:100%;height:452px;border:0}
 .embed-note{font-size:.8rem;color:var(--ink-3);margin:8px 2px 0}
 @media(max-width:820px){.hub-hero{grid-template-columns:1fr}.embed iframe{height:380px}}
 .tracks{display:grid;gap:0}
 .track{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px 22px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
-.track .t-art img{width:112px;height:112px;object-fit:cover;border-radius:12px;box-shadow:0 8px 22px rgba(74,50,20,.14)}
-.track h3{font-size:1.5rem}
+.track .t-art img{width:112px;height:112px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
+.track h3{font-size:1.2rem}
 .track h3 a{text-decoration:none}
-.track .gk{color:var(--rose);font-size:1.08rem;margin:2px 0 4px}
+.track .gk{color:var(--gold-ink);font-size:1.08rem;margin:2px 0 4px}
 .track .theme{margin:0 0 4px;color:var(--ink-2)}
 .track .meta{font-size:.78rem;color:var(--ink-3);letter-spacing:.04em;margin-bottom:12px}
-.track .t-more{display:inline-block;margin-top:10px;font-size:.88rem;font-weight:700;color:var(--gold);text-decoration:none}
+.track .t-more{display:inline-block;margin-top:10px;font-size:.9rem;font-weight:600;color:var(--gold-ink);text-decoration:none}
+.track .t-more:hover{color:var(--navy)}
 .stores-sm .store{padding:7px 13px 7px 10px;font-size:.84rem}
 .stores-sm .store svg{width:16px;height:16px}
 @media(max-width:560px){.track{grid-template-columns:76px minmax(0,1fr);gap:12px 14px}.track .t-art img{width:76px;height:76px}.track h3{font-size:1.25rem}}
 .plat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.plat > div{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--surface)}
-.plat h3{font-size:1.45rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.plat > div{border:1px solid var(--line);border-radius:18px;padding:24px;background:#fff;box-shadow:var(--shadow)}
+.plat h3{font-size:1.15rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
 .plat h3 svg{width:24px;height:24px;flex:none}
 .plat p{margin:0 0 14px;color:var(--ink-2);font-size:.98rem}
 .plat ul{margin:0 0 14px;padding-left:18px;color:var(--ink-2);font-size:.95rem}
-.plat ul a{color:var(--ink);font-weight:600}
+.plat ul a{color:var(--navy);font-weight:600}
 @media(max-width:900px){.plat{grid-template-columns:1fr}}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
 .vgrid .video{margin:0}
 .vgrid h3{font-size:1.15rem;margin-top:10px}
 .vgrid h3 a{text-decoration:none}
 .needs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:0;padding:0;list-style:none}
-.needs a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none}
+.needs a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;text-decoration:none}
 .needs a:hover{border-color:var(--gold)}
-.needs b{display:block;font-family:var(--serif);font-size:1.2rem;font-weight:600}
+.needs b{display:block;font:650 1.02rem/1.35 var(--sans);color:var(--navy);margin-bottom:2px}
 .needs span{font-size:.9rem;color:var(--ink-2)}
 """
 
@@ -207,7 +209,7 @@ def listen_page():
     chips = "".join(f"<li>{esc(k)}</li>" for k in kw)
 
     body = f"""
-<nav class="crumbs" aria-label="Breadcrumb"><a href="./">MedRise Gurbani</a> › Listen everywhere</nav>
+{B.crumbs(("Listen everywhere", ""))}
 <section class="hub-hero">
   <div>
     <div class="eyebrow">Spotify · Apple Music · YouTube</div>

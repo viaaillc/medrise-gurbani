@@ -69,186 +69,220 @@ def platform_buttons(links, big=False):
 
 # ----------------------------------------------------------------------------- CSS
 CSS = r"""
+/* 2026-11-18: same brand as med-rise.com/gurbani (tokens from med-rise.com/assets/site.css, .t-gurbani theme):
+   navy headings, gold accents, Fraunces + Inter served from med-rise.com, white header and footer. */
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(https://med-rise.com/assets/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url(https://med-rise.com/assets/fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url(https://med-rise.com/assets/fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(https://med-rise.com/assets/fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:500;font-display:swap;src:url(https://med-rise.com/assets/fonts/fraunces-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:600;font-display:swap;src:url(https://med-rise.com/assets/fonts/fraunces-latin-600-normal.woff2) format("woff2")}
 :root{
-  --ground:#FBF6EE; --surface:#F4ECE2; --surface-2:#EDE2D4; --line:#E1D3C1;
-  --ink:#2B2330; --ink-2:#5E5262; --ink-3:#8A7D8C;
-  --gold:#B8862B; --gold-2:#D9B25F; --rose:#B4566E; --rose-soft:#F1DCE1;
-  --shadow:0 18px 50px rgba(74,50,20,.16);
-  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --sans:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --bg:#F6F8FA;--navy:#012244;--navy-2:#0A3159;--ink:#0B1A2B;--ink-2:#33445A;--muted:#5B6B7E;--line:#E2E8EF;--line-2:#D3DCE6;
+  --gold:#C9953A;--gold-ink:#7E5208;--gold-soft:#FBF2DF;--teal:#079DAB;
+  --accent:var(--gold);--accent-ink:var(--gold-ink);--accent-soft:var(--gold-soft);
+  --radius:22px;--radius-sm:14px;
+  --shadow:0 1px 2px rgba(1,34,68,.05),0 10px 30px rgba(1,34,68,.07);
+  --shadow-lg:0 2px 4px rgba(1,34,68,.06),0 24px 60px rgba(1,34,68,.12);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --gurmukhi:"Noto Serif Gurmukhi","Raavi","Mukta Mahee",serif;
+  /* older names still used in page markup and listen_hub.py */
+  --ground:var(--bg);--surface:#fff;--surface-2:#EEF2F6;--ink-3:var(--muted);--gold-2:var(--gold-ink);--rose:var(--gold-ink);--rose-soft:var(--gold-soft);
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ground:#1B1620; --surface:#241D2A; --surface-2:#2E2534; --line:#3D3243;
-    --ink:#F2E9DF; --ink-2:#C9BCC4; --ink-3:#978A99;
-    --gold:#D9A84E; --gold-2:#B8862B; --rose:#E28FA6; --rose-soft:#3A2830;
-    --shadow:0 18px 50px rgba(0,0,0,.45); color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#1B1620; --surface:#241D2A; --surface-2:#2E2534; --line:#3D3243;
-  --ink:#F2E9DF; --ink-2:#C9BCC4; --ink-3:#978A99;
-  --gold:#D9A84E; --gold-2:#B8862B; --rose:#E28FA6; --rose-soft:#3A2830;
-  --shadow:0 18px 50px rgba(0,0,0,.45); color-scheme:dark;
-}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;
-  padding-inline:clamp(16px,4vw,48px);padding-block:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 img{max-width:100%;height:auto;display:block}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1180px;margin:0 auto}
-.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0;text-wrap:balance}
-h1{font-size:clamp(2.2rem,5vw,3.6rem)} h2{font-size:clamp(1.7rem,3.2vw,2.4rem)} h3{font-size:1.35rem}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:16px;top:12px;background:#fff;padding:8px 14px;border-radius:10px;z-index:99;box-shadow:var(--shadow)}
+main{display:block;background:radial-gradient(900px 420px at 90% -140px,rgba(201,149,58,.14),transparent 62%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 .78rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin:0}
+.eyebrow::before{content:"";flex:none;width:22px;height:2px;border-radius:2px;background:var(--accent)}
+h1,h2,h3{color:var(--navy);margin:0;line-height:1.15;text-wrap:balance}
+h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,5.4vw,3.9rem)} h2{font-size:clamp(1.7rem,3.3vw,2.45rem)}
+h3{font-family:var(--sans);font-size:1.18rem;font-weight:650;letter-spacing:-.01em;line-height:1.3}
+.eyebrow+h1,.eyebrow+h2{margin-top:14px}
 .gurmukhi{font-family:var(--gurmukhi);font-weight:500}
 
-/* header */
-.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{width:34px;height:34px;color:var(--gold)}
-.brand b{font-family:var(--serif);font-weight:600;font-size:1.35rem;letter-spacing:.01em}
-.brand small{display:block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:2px}
-nav.main{display:flex;gap:22px;font-size:.92rem;font-weight:600}
-nav.main a{text-decoration:none;color:var(--ink-2)} nav.main a:hover{color:var(--gold)}
-@media(max-width:560px){nav.main{display:none}}
+/* header (same as med-rise.com/gurbani) */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);-webkit-backdrop-filter:saturate(1.5) blur(16px);backdrop-filter:saturate(1.5) blur(16px);border-bottom:1px solid rgba(226,232,239,.8)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:70px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+.blogo{display:block;flex:none;width:38px;height:38px;border-radius:50%;object-fit:cover}
+.brand .wm{font:700 1.42rem/1 var(--sans);letter-spacing:-.03em;color:var(--navy)}
+.brand .gb-wm{color:var(--gold-ink);font-weight:600}
+.menu{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
+.menu a{display:block;padding:9px 13px;border-radius:999px;color:var(--ink-2);text-decoration:none;font:500 .95rem/1.2 var(--sans)}
+.menu a:hover,.menu a[aria-current="page"]{color:var(--navy);background:#EEF2F6}
+.menu .cta{background:var(--gold-ink);color:#fff;margin-left:6px}
+.menu .cta:hover{background:#5f3d05;color:#fff}
+.mobile-nav{display:none}
+@media (max-width:920px){
+  .menu{display:none}
+  .mobile-nav{display:block;position:relative}
+  .mobile-nav summary{list-style:none;cursor:pointer;padding:9px 14px;border:1px solid var(--line-2);border-radius:999px;font:600 .9rem/1 var(--sans);color:var(--navy)}
+  .mobile-nav summary::-webkit-details-marker{display:none}
+  .mobile-nav[open] summary{background:#EEF2F6}
+  .mobile-nav nav{position:absolute;right:0;top:calc(100% + 10px);width:min(86vw,320px);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);padding:10px;max-height:calc(100vh - 90px);overflow-y:auto}
+  .mobile-nav a{display:block;padding:11px 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+  .mobile-nav a:hover{background:#EEF2F6}
+}
+.crumbs{font-size:.86rem;color:var(--muted);padding-top:32px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--navy)}
+.crumbs span{margin:0 8px;opacity:.5}
+.crumbs b{color:var(--ink-2);font-weight:500}
+.crumbs+.section{padding-top:28px}
 
 /* hero (home) */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(40px,7vw,88px)}
-.hero p.lede{font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.45;color:var(--ink-2);max-width:34ch;margin:18px 0 26px}
-.hero .gk{font-size:clamp(1.3rem,2.4vw,1.8rem);color:var(--rose);margin-top:14px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:32px clamp(48px,7vw,80px)}
+.hero .crumbs{padding-top:0;margin-bottom:26px}
+.hero p.lede{font-size:clamp(1.08rem,1.6vw,1.24rem);line-height:1.7;color:var(--ink-2);max-width:34em;margin:18px 0 26px}
+.hero .gk{font-size:clamp(1.3rem,2.4vw,1.8rem);color:var(--gold-ink);margin-top:14px;line-height:1.5}
 .hero-art{position:relative;aspect-ratio:1;max-width:100%}
-.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:18px;box-shadow:var(--shadow)}
+.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-lg)}
 .hero-art img:nth-child(1){transform:rotate(-7deg) translate(-9%,3%) scale(.86);opacity:.85}
 .hero-art img:nth-child(2){transform:rotate(5deg) translate(9%,-4%) scale(.9);opacity:.92}
 .hero-art img:nth-child(3){transform:none}
 @media(max-width:820px){.hero{grid-template-columns:1fr}.hero-art{max-width:420px;margin:0 auto}}
 
-/* store buttons */
+/* store buttons (MedRise chip style; each store keeps its own icon colour) */
 .stores{display:flex;flex-wrap:wrap;gap:10px}
-.store{display:inline-flex;align-items:center;gap:9px;padding:9px 16px 9px 12px;border:1px solid var(--line);border-radius:999px;
-  background:var(--surface);text-decoration:none;font-size:.9rem;font-weight:600;color:var(--ink);transition:transform .15s,border-color .15s,box-shadow .15s}
+.store{display:inline-flex;align-items:center;gap:8px;padding:10px 16px 10px 13px;border-radius:999px;background:#fff;border:1px solid var(--line-2);text-decoration:none;color:var(--navy);font:500 .92rem/1 var(--sans);transition:border-color .15s,color .15s,transform .15s}
 .store svg{width:18px;height:18px;fill:var(--brand)}
-.store:hover{transform:translateY(-1px);border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.08)}
-.stores-big .store{padding:12px 20px 12px 15px;font-size:.98rem}
-.stores-big .store svg{width:21px;height:21px}
-:root[data-theme="dark"] .store svg[style],.store svg{filter:none}
+.store:hover{border-color:var(--accent);color:var(--accent-ink);transform:translateY(-1px)}
+.stores-big .store{padding:13px 20px 13px 16px;font-size:.98rem;font-weight:600}
+.stores-big .store svg{width:20px;height:20px}
 
-/* release grid */
-.section{padding-block:clamp(36px,6vw,72px);border-top:1px solid var(--line)}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
-.section-head p{margin:6px 0 0;color:var(--ink-2);max-width:60ch}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px 24px}
-.card{text-decoration:none;color:inherit;display:grid;gap:12px}
-.card .art{aspect-ratio:1;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface-2)}
-.card .art img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.card:hover .art img{transform:scale(1.035)}
-.card h3{font-size:1.5rem}
-.card .gk{color:var(--rose);font-size:1.05rem;margin-top:-4px}
-.card .theme{color:var(--ink-2);font-size:.95rem;margin:0}
-.card .meta{font-size:.78rem;color:var(--ink-3);letter-spacing:.04em}
-.badge{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--rose);background:var(--rose-soft);padding:4px 10px;border-radius:999px}
+/* release grid (MedRise cover cards) */
+.section{padding-block:56px;border-top:1px solid var(--line)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+.section-head p{margin:12px 0 0;color:var(--ink-2);max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);color:var(--ink)}
+.card .art{aspect-ratio:1;overflow:hidden;background:var(--surface-2)}
+.card .art img{width:100%;height:100%;object-fit:cover}
+.card>div:not(.art):not(.meta){padding:16px 18px 0}
+.card h3{font-size:1.08rem;color:var(--navy)}
+.card .gk{color:var(--gold-ink);font-size:1rem;line-height:1.5;margin-top:4px}
+.card .theme{color:var(--ink-2);font-size:.92rem;line-height:1.5;margin:8px 18px 0}
+.card .meta{font-size:.8rem;line-height:1.45;color:var(--muted);margin:auto 18px 0;padding:10px 0 18px}
+.badge{display:inline-block;font:600 .72rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:var(--gold-soft);color:var(--gold-ink);margin-bottom:10px}
 
 /* shabad page */
-.crumbs{font-size:.85rem;color:var(--ink-3);padding-block:18px 0}
-.crumbs a{text-decoration:none;color:var(--ink-2)}
-.shabad-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);padding-block:clamp(28px,4vw,56px);align-items:start}
-.shabad-top .art{position:sticky;top:24px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.shabad-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);padding-block:24px 56px;align-items:start}
+.shabad-top .art{position:sticky;top:94px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
 .shabad-top .art img{aspect-ratio:1;object-fit:cover;width:100%}
-.art-dl{display:block;margin-top:10px;font-size:.8rem;color:var(--ink-3);text-decoration:none;letter-spacing:.04em}
-.art-dl:hover{color:var(--gold)}
-.title-block .gk-title{font-size:clamp(1.55rem,3.4vw,2.4rem);color:var(--rose);margin:14px 0 6px;line-height:1.35}
-.title-block .sub{font-family:var(--serif);font-size:1.3rem;color:var(--ink-2);margin:0 0 14px;line-height:1.35}
-.source{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.86rem;color:var(--ink-3);margin:0 0 26px;padding:0;list-style:none}
-.source b{color:var(--ink-2);font-weight:600}
+.art-dl{display:block;margin-top:12px;font-size:.84rem;color:var(--muted);text-decoration:none}
+.art-dl:hover{color:var(--gold-ink)}
+.title-block h1{font-size:clamp(2.1rem,4.4vw,3.2rem)}
+.title-block .gk-title{font-size:clamp(1.5rem,3.2vw,2.2rem);color:var(--gold-ink);margin:14px 0 6px;line-height:1.45}
+.title-block .sub{font:500 1.2rem/1.4 var(--serif);color:var(--ink-2);margin:0 0 14px}
+.source{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.88rem;color:var(--muted);margin:0 0 22px;padding:0;list-style:none}
+.source b{color:var(--navy);font-weight:600}
 .intent{font-size:1.05rem;color:var(--ink-2);max-width:62ch;margin:0 0 26px}
-.notice{border-left:3px solid var(--gold);padding:10px 16px;background:var(--surface);border-radius:0 10px 10px 0;font-size:.95rem;margin:0 0 22px;color:var(--ink-2)}
-.listen-label{margin:0 0 12px}
+.notice{border-left:3px solid var(--accent);background:var(--accent-soft);padding:14px 18px;border-radius:0 14px 14px 0;font-size:.95rem;margin:0 0 22px;color:var(--ink-2)}
+.listen-label{margin:0 0 14px}
 @media(max-width:820px){.shabad-top{grid-template-columns:1fr}.shabad-top .art{position:static;max-width:520px}}
 
 /* video */
 .video{margin-top:34px}
-.video .frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;box-shadow:var(--shadow)}
+.video .frame{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:var(--shadow-lg)}
 .video .frame img,.video .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
 .video button{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
-.video button span{display:grid;place-items:center;width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.92);color:#B4566E;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.video button span{display:grid;place-items:center;width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.94);color:var(--navy);box-shadow:0 10px 30px rgba(1,34,68,.35)}
 .video button svg{width:30px;height:30px;margin-left:4px}
 
 /* verses */
-.verses{padding-block:clamp(36px,6vw,72px);border-top:1px solid var(--line)}
-.verses .lead{max-width:64ch;color:var(--ink-2);margin:8px 0 34px}
+.verses{padding-block:56px;border-top:1px solid var(--line)}
+.verses .lead{max-width:64ch;color:var(--ink-2);margin:12px 0 34px}
 .verse{display:grid;grid-template-columns:44px 1fr;gap:0 18px;padding:22px 0;border-bottom:1px solid var(--line);max-width:860px}
-.verse .n{font-family:var(--serif);font-size:1.1rem;color:var(--ink-3);padding-top:6px;font-variant-numeric:tabular-nums}
-.verse .g{font-family:var(--gurmukhi);font-size:clamp(1.35rem,2.3vw,1.7rem);line-height:1.7;font-weight:500}
+.verse .n{font:600 1.05rem/1 var(--serif);color:var(--muted);padding-top:16px;font-variant-numeric:tabular-nums}
+.verse .g{font-family:var(--gurmukhi);font-size:clamp(1.35rem,2.3vw,1.7rem);line-height:1.7;font-weight:500;color:var(--navy);margin:0}
 .verse .h{font-family:"Noto Serif Devanagari","Mangal",serif;font-size:1.05rem;color:var(--ink-2);margin:6px 0 0;line-height:1.6}
-.verse .t{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink-2);margin:8px 0 6px;line-height:1.45}
+.verse .t{font:500 1.12rem/1.5 var(--serif);color:var(--ink-2);margin:10px 0 6px}
 .verse .e{margin:0;color:var(--ink);max-width:62ch}
-.verse.key{background:linear-gradient(90deg,var(--surface),transparent);border-left:3px solid var(--gold);padding-left:18px;margin-left:-21px;border-radius:0 12px 12px 0}
-.verse.key .n{color:var(--gold)}
-.tag{display:inline-block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
-.legend{font-size:.82rem;color:var(--ink-3);margin-top:18px;max-width:64ch}
+.verse.key{background:linear-gradient(90deg,var(--gold-soft),rgba(251,242,223,0));border-left:3px solid var(--gold);padding-left:18px;margin-left:-21px;border-radius:0 14px 14px 0}
+.verse.key .n{color:var(--gold-ink)}
+.tag{display:inline-block;font:600 .72rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:6px}
+.legend{font-size:.84rem;color:var(--muted);margin-top:18px;max-width:64ch}
 
 /* meaning + faq */
-.meaning{padding-block:clamp(36px,6vw,64px);border-top:1px solid var(--line)}
+.meaning{padding-block:56px;border-top:1px solid var(--line)}
 .meaning p{max-width:68ch;color:var(--ink-2);margin:0 0 16px;font-size:1.05rem}
-.meaning p:first-of-type{color:var(--ink);font-family:var(--serif);font-size:1.3rem;line-height:1.5}
-.faq{padding-block:clamp(36px,6vw,64px);border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line);padding:14px 0;max-width:800px}
-.faq summary{font-family:var(--serif);font-size:1.25rem;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.faq summary::after{content:"+";color:var(--gold);font-weight:400}
-.faq details[open] summary::after{content:"–"}
-.faq details p{margin:10px 0 0;color:var(--ink-2);max-width:66ch}
-.lang-switch{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;margin-top:14px}
-.lang-switch a{text-decoration:none;color:var(--gold);font-weight:700;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--surface)}
+.meaning p:first-of-type{color:var(--navy);font:500 1.24rem/1.55 var(--serif)}
+.faq{padding-block:56px;border-top:1px solid var(--line)}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);margin:0 0 10px;max-width:820px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 52px 18px 22px;font:600 1rem/1.4 var(--sans);color:var(--navy);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);font:400 1.4rem/1 var(--sans);color:var(--accent-ink)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0;padding:0 22px 20px;color:var(--ink-2)}
+.lang-switch{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.88rem;color:var(--ink-2);margin-top:16px}
+.lang-switch a{text-decoration:none;color:var(--navy);font-weight:600;border:1px solid var(--line-2);border-radius:999px;padding:7px 14px;background:#fff}
+.lang-switch a:hover{border-color:var(--accent);color:var(--accent-ink)}
 /* two-col info */
-.info{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-block:clamp(36px,6vw,64px);border-top:1px solid var(--line)}
-.info h2{font-size:1.6rem;margin-bottom:10px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-block:56px;border-top:1px solid var(--line)}
+.info h2{font-size:1.6rem;margin-bottom:12px}
 .info p{margin:0 0 12px;color:var(--ink-2);max-width:60ch}
 @media(max-width:720px){.info{grid-template-columns:1fr}}
 
 /* prev/next */
 .pn{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-block:32px;border-top:1px solid var(--line)}
-.pn a{display:flex;gap:14px;align-items:center;text-decoration:none;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-.pn a img{width:64px;height:64px;border-radius:8px;object-fit:cover;flex:none}
+.pn a{display:flex;gap:14px;align-items:center;text-decoration:none;padding:12px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;box-shadow:var(--shadow);transition:border-color .15s}
+.pn a:hover{border-color:var(--accent)}
+.pn a img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none}
 .pn a.next{flex-direction:row-reverse;text-align:right}
-.pn small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
-.pn b{font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.pn small{display:block;font:600 .7rem/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pn b{font:650 1.02rem/1.3 var(--sans);color:var(--navy)}
 @media(max-width:600px){.pn{grid-template-columns:1fr}}
 
 /* keywords */
-.keywords{padding-block:clamp(32px,5vw,56px);border-top:1px solid var(--line)}
-.keywords h2{font-size:1.25rem;margin-bottom:6px}
-.keywords p{color:var(--ink-3);font-size:.9rem;margin:0 0 16px;max-width:64ch}
+.keywords{padding-block:48px;border-top:1px solid var(--line)}
+.keywords h2{font-size:1.3rem;margin-bottom:6px}
+.keywords p{color:var(--muted);font-size:.92rem;margin:0 0 16px;max-width:64ch}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
-.chips li{font-size:.82rem;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-2)}
+.chips li{font-size:.82rem;padding:6px 12px;border:1px solid var(--line-2);border-radius:999px;background:#fff;color:var(--ink-2)}
 
-/* footer */
-footer{border-top:1px solid var(--line);padding-block:36px 44px;display:grid;gap:18px;color:var(--ink-3);font-size:.88rem}
-footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
-footer .links{display:flex;flex-wrap:wrap;gap:14px}
-footer .links a{text-decoration:none;color:var(--ink-2);font-weight:600} footer .links a:hover{color:var(--gold)}
-.ornament{color:var(--gold);letter-spacing:.4em;font-size:.9rem}
+/* footer (same as med-rise.com/gurbani) */
+.site-footer{margin-top:40px;background:#fff;border-top:1px solid var(--line);padding:56px 0 34px;font-size:.93rem;color:var(--ink-2)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:28px}
+.foot-grid h4{font:600 .78rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.foot-grid ul{list-style:none;margin:0;padding:0}
+.foot-grid li{margin:0 0 8px}
+.foot-grid a{color:var(--ink-2);text-decoration:none}
+.foot-grid a:hover{color:var(--navy);text-decoration:underline}
+.foot-grid .brand .blogo{width:34px;height:34px}
+.foot-tag{margin:14px 0 8px;max-width:30em;color:var(--muted);font-size:.9rem}
+.foot-mail a{text-decoration:underline;text-underline-offset:2px}
+.foot-legal{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;line-height:1.6;display:grid;gap:8px}
+.foot-legal p{margin:0}
+@media (max-width:920px){.foot-grid{grid-template-columns:1fr 1fr}}
 
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
-/* share options (2026-11-15) */
-.share-band{padding-block:clamp(28px,5vw,48px);border-top:1px solid var(--line)}
-.share-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 32px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 26px}
-.share-h{font-family:var(--serif);font-weight:600;font-size:1.6rem;line-height:1.15;margin:6px 0 2px}
-.share-sub{margin:0;color:var(--ink-2)}
+/* share options (2026-11-15; MedRise share card style 2026-11-18) */
+.share-band{padding-block:48px 8px}
+.share-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 30px}
+.share-h{font:600 clamp(1.25rem,2.2vw,1.6rem)/1.15 var(--serif);letter-spacing:-.02em;color:var(--navy);margin:10px 0 4px}
+.share-sub{margin:0;color:var(--muted);font-size:.95rem}
 .share-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
-.share-chip{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;border-radius:999px;border:1px solid var(--line);background:var(--ground);color:var(--ink);font:600 .9rem/1 var(--sans);text-decoration:none;cursor:pointer}
-.share-chip:hover{border-color:var(--gold);color:var(--ink)}
-.share-primary{background:var(--ink);border-color:var(--ink);color:var(--ground)}
-.share-primary:hover{color:var(--ground)}
+.share-chip{display:inline-flex;align-items:center;padding:11px 15px;border-radius:999px;border:1px solid var(--line-2);background:#fff;color:var(--navy);font:600 .86rem/1 var(--sans);text-decoration:none;cursor:pointer;transition:border-color .15s,color .15s}
+.share-chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+.share-primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.share-primary:hover{background:var(--navy-2);border-color:var(--navy-2);color:#fff}
 .share-chip[hidden]{display:none}
 @media (hover:hover) and (pointer:fine){.share-touch{display:none}}
-.share-status{grid-column:1/-1;margin:0;font-weight:600;font-size:.9rem;color:var(--gold)}
+.share-status{grid-column:1/-1;margin:0;font-weight:600;font-size:.86rem;color:var(--accent-ink)}
 .share-status:empty{display:none}
-@media (max-width:760px){.share-card{grid-template-columns:1fr;padding:20px}.share-actions{justify-content:flex-start}}
+@media (max-width:760px){.share-card{grid-template-columns:1fr;padding:22px}.share-actions{justify-content:flex-start}}
 @media print{.share-band{display:none}}
 """
 
@@ -276,12 +310,67 @@ def share_band(canonical, title, og_type="website", lang="en"):
     nets = [("WhatsApp", f"https://wa.me/?text={both}", "ext"), ("Facebook", f"https://www.facebook.com/sharer/sharer.php?u={u}", "ext"),
             (T["text"], f"sms:?&body={both}", "touch"), (T["email"], f"mailto:?subject={t}&body={quote(title + chr(10) + chr(10) + canonical, safe='')}", ""),
             ("X", f"https://twitter.com/intent/tweet?url={u}&text={t}", "ext")]
-    chips = "".join(f'<a class="share-chip{" share-touch" if k == "touch" else ""}" href="{esc(h)}"{" target=\"_blank\" rel=\"noopener\"" if k == "ext" else ""}>{esc(l)}</a>' for l, h, k in nets)
+    ext = ' target="_blank" rel="noopener"'
+    chips = "".join(f'<a class="share-chip{" share-touch" if k == "touch" else ""}" href="{esc(h)}"{ext if k == "ext" else ""}>{esc(l)}</a>' for l, h, k in nets)
     return (f'<section class="share-band" id="share" aria-labelledby="share-h"><div class="share-card" data-share data-url="{esc(canonical)}" data-title="{esc(title)}" data-copied="{esc(T["copied"])}">'
             f'<div><div class="eyebrow">{esc(T["eyebrow"])}</div><h2 class="share-h" id="share-h">{esc(T["song"] if og_type == "music.song" else T["page"])}</h2><p class="share-sub">{esc(T["sub"])}</p></div>'
             f'<div class="share-actions"><button class="share-chip share-primary" type="button" data-share-native hidden>{esc(T["share"])}</button>{chips}'
             f'<button class="share-chip" type="button" data-share-copy hidden>{esc(T["copy"])}</button></div>'
             f'<p class="share-status" role="status" aria-live="polite"></p></div></section>{SHARE_JS}')
+
+# Header, footer and breadcrumbs match med-rise.com/gurbani (viaaillc/medrise-home site/gurbani/index.html), so the
+# library reads as part of the same site. Links into the main site are absolute: this build is also served on github.io.
+# If the main Gurbani menu changes, update GB_NAV here too.
+MAIN = "https://med-rise.com"
+GB_LOGO = f"{MAIN}/images/brands/gurbani.webp"
+GB_MAIL = "gurbani@med-rise.com"
+GB_NAV = [("Shabads", f"{MAIN}/gurbani/shabads/"), ("Events", f"{MAIN}/gurbani/events/"), ("Listen", f"{MAIN}/gurbani/#listen"),
+          ("Suniai app", f"{MAIN}/apps/gurbani-listener/"), ("Daily posts", f"{MAIN}/gurbani/#daily")]
+GB_FOLLOW = [("Instagram @medrise_gurbani", "https://www.instagram.com/medrise_gurbani/"), ("TikTok @medrise.gurbani", "https://www.tiktok.com/@medrise.gurbani"),
+             ("YouTube @MedRiseGurbani", "https://www.youtube.com/@MedRiseGurbani")]
+HUB_SLUG = "medrise-gurbani-spotify-apple-music-youtube"
+
+def gb_brand(size):
+    return (f'<a class="brand gb-brand" href="{MAIN}/gurbani/" aria-label="MedRise Gurbani home">'
+            f'<img class="blogo" src="{GB_LOGO}" width="{size}" height="{size}" alt="MedRise Gurbani logo">'
+            f'<span class="wm">MedRise <span class="gb-wm">Gurbani</span></span></a>')
+
+def site_header():
+    cur = ' aria-current="page"'
+    items = "".join(f'<li><a href="{esc(u)}"{cur if n == "Shabads" else ""}>{esc(n)}</a></li>' for n, u in GB_NAV)
+    mob = "".join(f'<a href="{esc(u)}">{esc(n)}</a>' for n, u in GB_NAV)
+    return (f'<header class="site-header gb-header"><div class="wrap nav">\n{gb_brand(38)}\n'
+            f'<ul class="menu">{items}<li><a class="cta" href="mailto:{GB_MAIL}">Contact</a></li></ul>\n'
+            f'<details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile">{mob}<a href="mailto:{GB_MAIL}">Contact</a></nav></details>\n'
+            f'</div></header>')
+
+def site_footer():
+    li = lambda pairs: "".join(f'<li><a href="{esc(u)}">{esc(n)}</a></li>' for n, u in pairs)
+    hub = [("Every shabad, every app", f"{HUB_SLUG}.html")] if (ROOT / "listen_hub.py").exists() else []
+    shabads = [("Shabad library", f"{MAIN}/gurbani/shabads/"), ("Recent releases", f"{MAIN}/gurbani/#shabads"),
+               ("Events", f"{MAIN}/gurbani/events/"), ("Suniai: Shabad Finder", f"{MAIN}/apps/gurbani-listener/")]
+    about = [("MedRise", f"{MAIN}/"), ("About MedRise Gurbani", "about.html"), ("Press kit", "epk.html"),
+             ("Privacy", f"{MAIN}/privacy/"), ("Terms", f"{MAIN}/terms/")]
+    return f"""<footer class="site-footer gb-footer"><div class="wrap">
+<div class="foot-grid">
+  <div>{gb_brand(34)}
+  <p class="foot-tag">Shabad kirtan with Gurmukhi, transliteration and English meaning, and a daily question answered from Gurbani.</p>
+  <p class="foot-mail small"><a href="mailto:{GB_MAIL}">{GB_MAIL}</a></p></div>
+  <div><h4>Shabads</h4><ul>{li(shabads)}</ul></div>
+  <div><h4>Listen</h4><ul>{li(list(SITE['artist_links'].items()) + hub)}</ul></div>
+  <div><h4>Follow</h4><ul>{li(GB_FOLLOW)}</ul></div>
+  <div><h4>About</h4><ul>{li(about)}</ul></div>
+</div>
+<div class="foot-legal">
+  <p>Gurbani text is from Sri Guru Granth Sahib Ji and Sri Dasam Granth Sahib. English translations and transliterations are offered for understanding and reflection and may be imperfect.</p>
+  <p>&copy; {TODAY[:4]} ViaAI LLC. MedRise Gurbani is a brand of ViaAI LLC.</p>
+</div></div></footer>"""
+
+def crumbs(*trail, label="Breadcrumb"):
+    """MedRise / Gurbani / Shabads / ... like the main site; trail items are (name, href), href "" for the current page."""
+    parts = [f'<a href="{MAIN}/">MedRise</a>', f'<a href="{MAIN}/gurbani/">Gurbani</a>', '<a href="./">Shabads</a>' if trail else '<b>Shabads</b>']
+    parts += [f'<a href="{esc(h)}">{esc(n)}</a>' if h else f'<b>{esc(n)}</b>' for n, h in trail]
+    return f'<nav class="crumbs" aria-label="{label}">' + "<span>/</span>".join(parts) + "</nav>"
 
 def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og_type="website", keywords="", lang="en", alternates=None):
     canonical = f"{BASE}/{canonical_path}".rstrip("/") + ("/" if canonical_path == "" else "")
@@ -297,8 +386,7 @@ def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og
 {f'<meta name="keywords" content="{esc(keywords)}">' if keywords else ''}
 <link rel="canonical" href="{esc(canonical)}">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#FBF6EE" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1B1620" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#012244">
 <meta property="og:site_name" content="MedRise Gurbani">
 <meta property="og:type" content="{og_type}">
 <meta property="og:title" content="{esc(title)}">
@@ -311,30 +399,26 @@ def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{esc(og_image)}">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="https://med-rise.com/favicon.ico" sizes="32x32">
+<link rel="icon" href="https://med-rise.com/images/icons/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="https://med-rise.com/images/icons/apple-touch-icon.png">
+<link rel="preload" href="https://med-rise.com/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://med-rise.com/assets/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Gurmukhi:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 <link rel="sitemap" type="application/xml" href="sitemap.xml">
 {extra_head}
 <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
 </head>
 <body>
-<div class="wrap">
-<header class="top">
-  <a class="brand" href="./" aria-label="MedRise Gurbani home">{LOTUS}<span><b>MedRise Gurbani</b><small>Meditate and Rise with Gurbani</small></span></a>
-  <nav class="main" aria-label="Main"><a href="./#shabads">Shabads</a><a href="./#listen">Listen</a><a href="about.html">About</a><a href="epk.html">Press</a></nav>
-</header>
+<a class="skip" href="#main">Skip to content</a>
+{site_header()}
+<main id="main"><div class="wrap">
 {body}
 {"" if "noindex" in extra_head else share_band(canonical, title, og_type, lang)}
-<footer>
-  <div class="ornament" aria-hidden="true">✦ ✦ ✦</div>
-  <div class="row">
-    <div>© {TODAY[:4]} MedRise Gurbani · Meditate and Rise with Gurbani. Gurbani text is Sri Guru Granth Sahib Ji and Sri Dasam Granth Sahib; translations are provided for understanding and may be imperfect.</div>
-    <div class="links">{''.join(f'<a href="{esc(u)}" target="_blank" rel="noopener">{esc(n)}</a>' for n,u in SITE['artist_links'].items())}</div>
-  </div>
-</footer>
-</div>
+</div></main>
+{site_footer()}
 </body>
 </html>"""
 
@@ -344,7 +428,7 @@ ORG_LD = {
     "alternateName": SITE.get("alternate_names", []),
     "sameAs": list(SITE["artist_links"].values()),
     "description": SITE["description"],
-    "logo": f"{BASE}/favicon.svg",
+    "logo": "https://med-rise.com/images/brands/gurbani.webp",
     "image": f"{BASE}/images/inhi-ki-kirpa-1200.jpg",
 }
 
@@ -377,6 +461,7 @@ def home():
     body = f"""
 <section class="hero">
   <div>
+    {crumbs()}
     <div class="eyebrow">Shabad Kirtan · Gurmukhi · Transliteration · Meaning</div>
     <h1 style="margin-top:14px">Meditate and Rise with Gurbani</h1>
     <div class="gk gurmukhi">ਖੋਜ ਸਬਦ ਮਹਿ ਲੇਹ</div>
@@ -473,7 +558,7 @@ def shabad_page(i, s):
     chips = "".join(f"<li>{esc(k)}</li>" for k in s["keywords"])
 
     body = f"""
-<nav class="crumbs" aria-label="Breadcrumb"><a href="./">MedRise Gurbani</a> › <a href="./#shabads">Shabads</a> › {esc(s['title'])}</nav>
+{crumbs((s['title'], ""))}
 <section class="shabad-top">
   <div><div class="art"><img src="{art}" alt="{esc(s['title'])} — MedRise Gurbani cover art" width="1200" height="1200" fetchpriority="high"></div>{dl}</div>
   <div class="title-block">
@@ -610,7 +695,7 @@ def variant_page(s):
 <button type="button" aria-label="Reproducir video" onclick="var f=this.parentNode,i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/{yid}?autoplay=1';i.allow='autoplay; encrypted-media; picture-in-picture';i.allowFullscreen=true;i.title='{esc(v['title'])}';f.replaceChildren(i)"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div></div>"""
     chips = "".join(f"<li>{esc(k)}</li>" for k in v.get("keywords", []))
     body = f"""
-<nav class="crumbs" aria-label="Ruta"><a href="./">MedRise Gurbani</a> › <a href="./#shabads">Shabads</a> › <a href="{s['slug']}.html">{esc(s['title'])}</a> › Español</nav>
+{crumbs((s['title'], s['slug'] + ".html"), ("Español", ""), label="Ruta")}
 <section class="shabad-top">
   <div><div class="art"><img src="{art}" alt="{esc(v['title'])} — portada MedRise Gurbani" width="1200" height="1200" fetchpriority="high"></div></div>
   <div class="title-block">
@@ -665,6 +750,7 @@ def variant_page(s):
 
 def about():
     body = f"""
+{crumbs(("About", ""))}
 <section class="section" style="border:0">
   <div class="eyebrow">About</div>
   <h1 style="margin:12px 0 18px">Meditate and Rise with Gurbani</h1>
@@ -724,6 +810,7 @@ def epk():
 </a>""")
 
     body = f"""
+{crumbs(("Press kit", ""))}
 <section class="section" style="border:0">
   <div class="eyebrow">Press / Electronic Press Kit</div>
   <h1 style="margin:12px 0 10px">MedRise Gurbani — Press Kit</h1>
@@ -766,7 +853,7 @@ def epk():
   <div class="eyebrow">Press contact</div>
   <h2 style="margin:10px 0 14px">Get in touch</h2>
   <p class="intent">For interview requests, playlist pitches, press features or booking enquiries:</p>
-  <div class="stores stores-big"><a class="store" href="mailto:{esc(PRESS_EMAIL)}" style="--brand:#B8862B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.01L12 13l8-5.99V7H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 9.24V17h16V9.24z"/></svg><span>{esc(PRESS_EMAIL)}</span></a></div>
+  <div class="stores stores-big"><a class="store" href="mailto:{esc(PRESS_EMAIL)}" style="--brand:#7E5208"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.01L12 13l8-5.99V7H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 9.24V17h16V9.24z"/></svg><span>{esc(PRESS_EMAIL)}</span></a></div>
   <p class="eyebrow" style="margin-top:26px">Follow &amp; listen</p>{platform_buttons(SITE['artist_links'])}
 </section>
 """
@@ -780,7 +867,7 @@ def not_found():
     return shell("Page not found — MedRise Gurbani", "Page not found.", "404.html", body, f"{BASE}/{img_src('inhi-ki-kirpa',1200)}", {"@context": "https://schema.org", "@type": "WebPage", "name": "Not found"}, extra_head='<meta name="robots" content="noindex">')
 
 
-FAVICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#2B2330"/><g fill="none" stroke="#D9A84E" stroke-width="1.8"><path d="M24 40c-8-4-13-11-13-19 5 1 9 4 13 9 4-5 8-8 13-9 0 8-5 15-13 19z"/><path d="M24 30c-2-8-1-16 0-22 1 6 2 14 0 22z"/></g></svg>'
+FAVICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#012244"/><g fill="none" stroke="#C9953A" stroke-width="1.8"><path d="M24 40c-8-4-13-11-13-19 5 1 9 4 13 9 4-5 8-8 13-9 0 8-5 15-13 19z"/><path d="M24 30c-2-8-1-16 0-22 1 6 2 14 0 22z"/></g></svg>'
 
 # ----------------------------------------------------------------------------- build
 def build():
