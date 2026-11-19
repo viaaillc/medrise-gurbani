@@ -286,6 +286,12 @@ h3{font-family:var(--sans);font-size:1.18rem;font-weight:650;letter-spacing:-.01
 @media print{.share-band{display:none}}
 """
 
+# Version tag on the stylesheet link (as med-rise.com does), so a browser holding an older style.css (cached up to an
+# hour) fetches the new one as soon as the pages change. Includes listen_hub.py, which appends its own CSS.
+import hashlib
+_HUB = ROOT / "listen_hub.py"
+CSS_V = hashlib.sha1((CSS + (_HUB.read_text(encoding="utf-8") if _HUB.exists() else "")).encode("utf-8")).hexdigest()[:10]
+
 # ----------------------------------------------------------------------------- shell
 LOTUS = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M24 40c-8-4-13-11-13-19 5 1 9 4 13 9 4-5 8-8 13-9 0 8-5 15-13 19z"/><path d="M24 30c-2-8-1-16 0-22 1 6 2 14 0 22z"/><path d="M11 21c-4 1-7 3-9 6 6 2 12 2 18 0M37 21c4 1 7 3 9 6-6 2-12 2-18 0"/></svg>'
 
@@ -406,7 +412,7 @@ def shell(title, desc, canonical_path, body, og_image, jsonld, extra_head="", og
 <link rel="preload" href="https://med-rise.com/assets/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v={CSS_V}">
 <link rel="sitemap" type="application/xml" href="sitemap.xml">
 {extra_head}
 <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
