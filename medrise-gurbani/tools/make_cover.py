@@ -13,7 +13,7 @@ Typography follows the series: brand line + tagline on top, Ik Onkar, Gurmukhi t
 display serif, subtitle in spaced small caps, source line, thin double gold frame, wordmark at the foot.
 Fonts: uses tools/fonts/ if present (Noto Serif Gurmukhi, Cormorant Garamond, Cinzel), else system fallbacks.
 """
-import json, sys, math, pathlib, random
+import json, re, sys, math, pathlib, random
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -177,7 +177,7 @@ def render(s, bg=None, layout="top"):
     # no photo: set the shabad's own lines faintly in gold across the lower field
     if not bg:
         f_v = font(F_GURMUKHI, 92)
-        lines = [v["g"].replace("॥", "").strip() for v in s["verses"]][:8]
+        lines = [re.sub(r"\s+", " ", re.sub(r"[॥੦-੯]", "", v["g"])).strip() for v in s["verses"]][:8]  # drop dandas and verse numbers
         top = y + 220; avail = yb - 80 - top
         lh = min(int(f_v.size * 1.6), avail // max(1, len(lines)))
         yy = top + (avail - lh * len(lines)) // 2

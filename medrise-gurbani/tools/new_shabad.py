@@ -113,7 +113,7 @@ def make_entry(spec):
         "verses": spec["verses"],
         "keywords": [],
     }
-    for k in ("hindi_title", "short_title", "meaning", "faq", "image_remote"):
+    for k in ("hindi_title", "short_title", "meaning", "faq", "image_remote", "translation_note", "arrangement_note"):
         if spec.get(k): e[k] = spec[k]
     if not e["release_date"]:
         e["coming_soon"] = spec.get("coming_soon") or "Coming soon to Spotify, Apple Music, YouTube and all platforms."

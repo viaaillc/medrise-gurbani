@@ -589,12 +589,12 @@ def shabad_page(i, s):
   <h2 style="margin-top:10px">{esc(s['title'])} — lyrics and meaning</h2>
   <p class="lead">Read each line in layers: the original Gurmukhi{", the same line in Devanagari (Hindi script)" if any(v.get("h") for v in s["verses"]) else ""}, a Roman transliteration to sing from, and the English meaning. Line numbers follow the order sung in the recording.</p>
   {''.join(verses)}
-  <p class="legend">Gurbani is quoted from {esc(src['granth'])}{f", Ang {src['ang']}" if src.get('ang') else ''}. English renderings draw on the Sant Singh Khalsa translation and are lightly clarified for readers new to Gurbani.</p>
+  <p class="legend">Gurbani is quoted from {esc(src['granth'])}{f", Ang {src['ang']}" if src.get('ang') else ''}. {esc(s.get('translation_note') or 'English renderings draw on the Sant Singh Khalsa translation and are lightly clarified for readers new to Gurbani.')}</p>
 </section>
 {meaning}
 {faq}
 <section class="info">
-  <div><h2>About this shabad</h2><p>{esc(s['intention'])}</p><p>Composed by {esc(src.get('writer') or 'the Guru')}{f" in {esc(src['raag'])}" if src.get('raag') else ''}. MedRise Gurbani presents it in a gentle, meditative arrangement so the words stay in front — sung for listeners who want to understand as they listen.</p></div>
+  <div><h2>About this shabad</h2><p>{esc(s['intention'])}</p><p>Composed by {esc(src.get('writer') or 'the Guru')}{f" in {esc(src['raag'])}" if src.get('raag') else ''}. {esc(s.get('arrangement_note') or 'MedRise Gurbani presents it in a gentle, meditative arrangement so the words stay in front — sung for listeners who want to understand as they listen.')}</p></div>
   <div><h2>When to listen</h2><p>{esc(s['theme'])}. Play it in the morning before the day begins, or whenever the situation it speaks to is on your mind. Reading the meaning first turns listening into simran.</p>{'<p>Available on ' + esc(", ".join([k for k in PLATFORM_ORDER if k in s["links"] and k != "All platforms"])) + '.</p>' if s['links'] else ''}</div>
 </section>
 {pn}
