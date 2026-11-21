@@ -1,9 +1,9 @@
 # Release kit — Aukhi Ghari Na Dekhan Dei
-_ਅਉਖੀ ਘੜੀ ਨ ਦੇਖਣ ਦੇਈ_ · Sri Guru Granth Sahib Ji, Ang 682 · generated 2026-11-18
+_ਅਉਖੀ ਘੜੀ ਨ ਦੇਖਣ ਦੇਈ_ · Sri Guru Granth Sahib Ji, Ang 682 · generated 2026-11-21
 
 Site page: https://med-rise.com/gurbani/shabads/aukhi-ghari-na-dekhan-dei.html
-Cover: images/full/aukhi-ghari-na-dekhan-dei.jpg (3000×3000)
-Status: coming soon — no release_date yet
+Cover: images/full/aukhi-ghari.jpg (3000×3000)
+Status: released 2026-11-18
 
 ## 1. DistroKid metadata
 - Artist: MedRise Gurbani
@@ -11,7 +11,7 @@ Status: coming soon — no release_date yet
 - Version / subtitle: Apna Birad Samale — He does not let His own see the hard hour
 - Songwriter: Guru Arjan Dev Ji (Mahalla 5) (lyrics) · composer/performer: Manpreet Kaur Bindra
 - Language: Punjabi · Genre: Devotional / World · Explicit: No
-- Cover: images/full/aukhi-ghari-na-dekhan-dei.jpg
+- Cover: images/full/aukhi-ghari.jpg
 - After delivery run: `python3 tools/new_shabad.py --set aukhi-ghari-na-dekhan-dei release_date=YYYY-MM-DD links.Spotify=... links."Apple Music"=... links."All platforms"=https://song.link/...`
 
 ## 2. YouTube title
@@ -25,7 +25,7 @@ Sing this in the middle of a hard stretch: a hospital wait, an exam result, a ni
 From Sri Guru Granth Sahib Ji, Ang 682 · Raag Dhanasari · Guru Arjan Dev Ji (Mahalla 5).
 
 ▶ Full lyrics, transliteration and meaning: https://med-rise.com/gurbani/shabads/aukhi-ghari-na-dekhan-dei.html
-▶ Listen everywhere: https://open.spotify.com/artist/0J71hMTTyoPkpzUqB35CkF
+▶ Listen everywhere: https://song.link/i/6836570338
 
 LYRICS · GURMUKHI · TRANSLITERATION · MEANING
 ਅਉਖੀ ਘੜੀ ਨ ਦੇਖਣ ਦੇਈ ਅਪਨਾ ਬਿਰਦੁ ਸਮਾਲੇ ॥
@@ -109,7 +109,13 @@ Sri Guru Granth Sahib Ji, Ang 682. Now on Spotify, Apple Music and YouTube — l
 ```
 
 ## 8. Store links (as on the site)
-(add store links after DistroKit delivers — tools/new_shabad.py --set <slug> links.Spotify=URL ...)
+Spotify: https://open.spotify.com/track/0MvygRT6yWPNz946HVEbFC
+Apple Music: https://music.apple.com/us/album/aukhi-ghari-na-dekhan-dei-%E0%A8%94%E0%A8%96-%E0%A8%98%E0%A9%9C-%E0%A8%A8-%E0%A8%A6-%E0%A8%96%E0%A8%A3-%E0%A8%A6-%E0%A8%88-gurbani/6836570337?i=6836570338
+YouTube Music: https://music.youtube.com/watch?v=tJR-nK06O-E
+Amazon Music: https://music.amazon.com/albums/B0HS5WBMXV
+Deezer: https://www.deezer.com/us/album/1150323071
+TIDAL: https://listen.tidal.com/track/580419024
+All platforms: https://song.link/i/6836570338
 
 ## 9. Checklist
 - [ ] Cover approved (3000×3000, no text cut by the frame)
