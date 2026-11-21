@@ -778,7 +778,7 @@ def about():
     return shell("About MedRise Gurbani", "MedRise Gurbani records Shabad Kirtan with Gurmukhi, transliteration and English meaning — Gurbani for understanding.", "about.html", body, og, jsonld)
 
 
-PRESS_EMAIL = "viaai.llc@gmail.com"
+PRESS_EMAIL = "gurbani@med-rise.com"
 
 def epk():
     dated = [s for s in SHABADS if s.get("release_date")]
