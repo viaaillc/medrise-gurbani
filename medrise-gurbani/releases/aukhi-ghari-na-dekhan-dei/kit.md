@@ -111,6 +111,7 @@ Sri Guru Granth Sahib Ji, Ang 682. Now on Spotify, Apple Music and YouTube — l
 ## 8. Store links (as on the site)
 Spotify: https://open.spotify.com/track/0MvygRT6yWPNz946HVEbFC
 Apple Music: https://music.apple.com/us/album/aukhi-ghari-na-dekhan-dei-%E0%A8%94%E0%A8%96-%E0%A8%98%E0%A9%9C-%E0%A8%A8-%E0%A8%A6-%E0%A8%96%E0%A8%A3-%E0%A8%A6-%E0%A8%88-gurbani/6836570337?i=6836570338
+YouTube: https://www.youtube.com/watch?v=tJR-nK06O-E
 YouTube Music: https://music.youtube.com/watch?v=tJR-nK06O-E
 Amazon Music: https://music.amazon.com/albums/B0HS5WBMXV
 Deezer: https://www.deezer.com/us/album/1150323071
